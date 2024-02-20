@@ -10,7 +10,9 @@ const Navbar = () => {
 
     const pathName = usePathname()
 
-    const [NavHeight, setNavHeight] = useState<CSSProperties>(window.innerWidth >= 992 ? {height: '75vh'}: {height: '35vh'});
+    const [NavHeight, setNavHeight] = useState<CSSProperties>(
+        typeof  window != 'undefined' ? window.innerWidth >= 992 ? { height: '75vh' } : { height: '35vh' } : {height: '75vh'}
+    );
 
     useEffect(() => {
         window.addEventListener('resize', changeNavHeight)
@@ -19,7 +21,7 @@ const Navbar = () => {
     function changeNavHeight() {
         if (pathName == PathEnum.MAIN && window.innerWidth >= 992) {
             setNavHeight({ height: '75vh' })
-        } else if(pathName == PathEnum.MAIN){
+        } else if (pathName == PathEnum.MAIN) {
             setNavHeight({ height: '35vh' })
         }
     }

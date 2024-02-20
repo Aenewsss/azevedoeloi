@@ -16,13 +16,13 @@ export const metadata: Metadata = {
   category: "Energia Solar, painéis solares",
   applicationName: "Azevedo & Eloi Advogados Associados",
   appleWebApp: true,
-  twitter: { card: "summary_large_image", site: "@site", creator: "@creator" },
-  openGraph: {
-    type: "website", locale: "pt_BR",
-    description: "Escritório com atuação em Direito de Família Sucessões, Direito imobiliário, contratos, aposentadoria, auxílio-doença, INSS, Direito Penal.",
-    url: "https://azevedoeloi.adv.br/", siteName: "Azevedo & Eloi Advogados Associados",
-    title: "Escritório com atuação em Direito de Família Sucessões, Direito imobiliário, contratos, aposentadoria, auxílio-doença, INSS, Direito Penal."
-  }
+  // twitter: { card: "summary_large_image", site: "@site", creator: "@creator" },
+  // openGraph: {
+  //   type: "website", locale: "pt_BR",
+  //   description: "Escritório com atuação em Direito de Família Sucessões, Direito imobiliário, contratos, aposentadoria, auxílio-doença, INSS, Direito Penal.",
+  //   url: "https://azevedoeloi.adv.br/", siteName: "Azevedo & Eloi Advogados Associados",
+  //   title: "Escritório com atuação em Direito de Família Sucessões, Direito imobiliário, contratos, aposentadoria, auxílio-doença, INSS, Direito Penal."
+  // }
 }
 
 
