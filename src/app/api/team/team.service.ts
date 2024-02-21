@@ -13,7 +13,7 @@ class TeamApiService {
     async createTeam(dto: ITeam) {
         try {
             return (await db.query(`
-            INSERT INTO team (1)
+            INSERT INTO team (email,image,info,name,text)
             VALUES ('${dto.email}', '${dto.image}', '${dto.info}', '${dto.name}', '${dto.text}')
             RETURNING id
             `)).rows[0]
