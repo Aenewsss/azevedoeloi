@@ -39,7 +39,7 @@ export default function RootLayout({
         <link rel="icon" sizes="192x192" href="favicon.png"></link>
       </head>
       <body className={lato.className}>
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
       </body>
     </html>
