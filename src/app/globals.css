@@ -167,4 +167,7 @@ a {
   left: -4vw !important;
 }
 
+.mw-400{max-width: 400px !important;}
+.mh-500{max-height: 500px !important;}
+
 @media screen and (max-width: 992px) {}
