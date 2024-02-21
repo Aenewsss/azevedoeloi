@@ -6,27 +6,31 @@ class BannerApiService {
         return (await db.query("SELECT * FROM banners")).rows
     }
 
-    async getBannerById(id: string) {
-        return (await db.query(`SELECT * FROM banners WHERE id = ${id}`)).rows
+    async getBannerById(id: string): Promise<IBanner> {
+        return (await db.query(`SELECT * FROM banners WHERE id = ${id}`)).rows[0]
     }
-    
+
     async createBanner(dto: IBanner) {
-        return (await db.query(`
-            INSERT INTO banners (largeImage,smallImage, link)
-            VALUES ('${dto.largeImage}', '${dto.smallImage}', '${dto.link}')
+        try {
+            return (await db.query(`
+            INSERT INTO banners (large_image, small_image, link)
+            VALUES ('${dto.large_image}', '${dto.small_image}', '${dto.link}')
             RETURNING id
-        `)).rows[0]
+            `)).rows[0]
+        } catch (error) {
+            console.error(error)
+        }
     }
     async updateBanner(id: string, dto: IBanner) {
-        return await db.query(`
+        return (await db.query(`
             UPDATE banners 
-            SET largeImage = '${dto.largeImage}', smallImage = '${dto.smallImage}', link = '${dto.link}'
+            SET large_image = '${dto.large_image}', small_image = '${dto.small_image}', link = '${dto.link}'
             WHERE id = ${id}
-            RETURNING id
-        `)
+            RETURNING *
+        `)).rows[0]
     }
     async deleteBanner(id: string) {
-        return await db.query(`DELETE FROM banners WHERE id = ${id}`)
+        return (await db.query(`DELETE FROM banners WHERE id = ${id} RETUNING *`)).rows[0]
     }
 }
 

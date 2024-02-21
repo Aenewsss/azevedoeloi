@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
-import zlib from "zlib"
-import { promisify } from "util";
 import bannerService from "./banner.service";
+import fs from "fs"
+import { PathPublicImagesEnum } from "@/enums/path.enum";
 
 export async function GET() {
     try {
         const banners = await bannerService.getAllBanners()
-        
+
         return NextResponse.json({ banners })
     } catch (error) {
         return NextResponse.json({ error })
@@ -16,22 +16,30 @@ export async function GET() {
 export async function POST(req: Request) {
     try {
         const banner = await req.formData()
-        const image = banner.get('image') as File
-        const buffer = await image.arrayBuffer()
 
-        // Comprimindo buffer para salvar na base
-        const compressedBuffer = await promisify(zlib.gzip)(Buffer.from(buffer));
+        const [large_image, small_image, link] = [banner.get('large_image') as File, banner.get('small_image') as File, banner.get('link') as string]
 
-        console.log(buffer.byteLength - compressedBuffer.byteLength + " foi a quantidade de bytes que vc economizou após comprimir o arquivo")
+        if (!large_image || !small_image || !link) return NextResponse.json({ error: 'Insira todos os dados do formulário: large_image, small_image e link' });
 
-        // Descomprimindo buffer para resgatar sua url
-        const descompressedBuffer = await promisify(zlib.gunzip)(compressedBuffer )
-        const descompressedBase64 = Buffer.from(descompressedBuffer).toString('base64')
-        const imageSrc = `data:image/png;base64,${descompressedBase64}`
+        const [bufferLarge, bufferSmall] = [
+            Buffer.from(await large_image.arrayBuffer()),
+            Buffer.from(await small_image.arrayBuffer())
+        ]
 
-        return NextResponse.json({ imageSrc });
+        const largeImagePath = PathPublicImagesEnum.BANNERS_DESKTOP + large_image.name
+        const smallImagePath = PathPublicImagesEnum.BANNERS_MOBILE + small_image.name
+        
+        fs.writeFile(largeImagePath, bufferLarge, (err) => { if (err) console.error(err) })
+        fs.writeFile(smallImagePath, bufferSmall, (err) => { if (err) console.error(err) })
 
+        const newBanner = await bannerService.createBanner({
+            large_image: largeImagePath.replace("public", ""),
+            small_image: smallImagePath.replace("public", ""),
+            link
+        })
+
+        return NextResponse.json({ newBanner });
     } catch (error) {
-        return NextResponse.json({ error })
+        return NextResponse.json({ error: 'Dados incompletos' })
     }
 }

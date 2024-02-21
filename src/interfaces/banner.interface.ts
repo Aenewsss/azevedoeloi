@@ -1,5 +1,5 @@
 export interface IBanner {
-    largeImage: Buffer
-    smallImage: Buffer
+    large_image: string
+    small_image: string
     link: string
 }
