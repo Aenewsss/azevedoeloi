@@ -8,5 +8,6 @@ export enum PathEnum {
 export enum PathPublicImagesEnum {
     BANNERS_DESKTOP = "public/banners/desktop/",
     BANNERS_MOBILE = "public/banners/mobile/",
-    ICONS = "public/icons/"
+    ICONS = "public/icons/",
+    TEAM = "public/team/",
 }
