@@ -3,19 +3,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useFormState, useFormStatus } from "react-dom";
-import { authenticate } from "../actions/auth.action";
+import { authenticate } from "../actions/authenticate.action";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
 
-    const [errorMessage, formAction] = useFormState(authenticate, undefined)
+    const [authenticateState, formAction] = useFormState(authenticate, { error: '', token: '' })
+
+    if(authenticateState.token) useRouter().push('/admin')
 
     return (
         <div className="row d-flex justify-content-center">
             <div className="col-md-4 mt-5">
                 <form action={formAction} className="d-flex flex-column pb-5 align-items-center px-4  position-relative rounded overflow-hidden">
+                    <Image className="mt-5" width={300} height={200} src="logo-white.svg" alt="Logo Azevedo Eloi" />
                     <h1 className="text-white mt-5 fw-bold">LOGIN</h1>
 
-                    <div className="form-floating mb-3 mt-5 w-100">
+                    <div className="form-floating mb-3 mt-3 w-100">
                         <input
                             type="text"
                             className="form-control"
@@ -43,7 +47,7 @@ export default function Login() {
                     </div>
 
                     <SubmitButton />
-                    {errorMessage && <p className="text-danger my-2">{errorMessage}</p>}
+                    {authenticateState?.error && <p className="text-danger bg-dark px-3 my-2">{authenticateState.error}</p>}
                     <Link href={"/esqueci-minha-senha"} className="text-white mt-5 scale" role="button">Esqueci minha senha</Link>
                 </form>
             </div>

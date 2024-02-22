@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
-
+import "../global.css"
 const lato = Lato({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
@@ -13,16 +11,9 @@ export const metadata: Metadata = {
     url: "https://aenamartinelli.com.br"
   },
   creator: "Aenã Martinelli",
-  category: "Energia Solar, painéis solares",
+  category: "Escritório com atuação em Direito de Família Sucessões, Direito imobiliário, contratos, aposentadoria, auxílio-doença, INSS, Direito Penal.",
   applicationName: "Azevedo & Eloi Advogados Associados",
   appleWebApp: true,
-  // twitter: { card: "summary_large_image", site: "@site", creator: "@creator" },
-  // openGraph: {
-  //   type: "website", locale: "pt_BR",
-  //   description: "Escritório com atuação em Direito de Família Sucessões, Direito imobiliário, contratos, aposentadoria, auxílio-doença, INSS, Direito Penal.",
-  //   url: "https://azevedoeloi.adv.br/", siteName: "Azevedo & Eloi Advogados Associados",
-  //   title: "Escritório com atuação em Direito de Família Sucessões, Direito imobiliário, contratos, aposentadoria, auxílio-doença, INSS, Direito Penal."
-  // }
 }
 
 export default function AdminLayout({

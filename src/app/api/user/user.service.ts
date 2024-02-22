@@ -2,15 +2,21 @@ import db from "@/config/database";
 import { IUser } from "@/interfaces/user.interface";
 
 class UserServiceApi {
-    async getUser(email: string): Promise<IUser> {
+    async getUserByEmail(email: string): Promise<IUser> {
         try {
             return (await db.query(`
-            SELECT * FROM users where email = ${email}
+            SELECT * FROM users WHERE email = '${email}'
             `)).rows[0]
-        } catch (error) {
-            console.error(error)
-            throw new Error('Failed to fetch user.');
+        } catch (error: any) {
+            console.error(error.message)
         }
+    }
+
+    async createUser(email: string, password: string): Promise<IUser> {
+        return (await db.query(`
+            INSERT INTO users (email, password) VALUES ('${email}','${password}')
+            RETURNING *
+        `)).rows[0]
     }
 }
 

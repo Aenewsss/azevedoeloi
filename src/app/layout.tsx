@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: "https://aenamartinelli.com.br"
   },
   creator: "Aenã Martinelli",
-  category: "Energia Solar, painéis solares",
+  category: "Escritório com atuação em Direito de Família Sucessões, Direito imobiliário, contratos, aposentadoria, auxílio-doença, INSS, Direito Penal.",
   applicationName: "Azevedo & Eloi Advogados Associados",
   appleWebApp: true,
   // twitter: { card: "summary_large_image", site: "@site", creator: "@creator" },
