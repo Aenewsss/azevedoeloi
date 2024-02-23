@@ -175,4 +175,19 @@ a {
 
 .top-n40{top: -40px !important;}
 
+.fs-14{font-size: 14px !important;}
+
+.w-300{width: 300px !important;}
+.h-200{height: 200px !important;}
+
+.large-image-edit:hover{
+  opacity: 1 !important;
+  cursor: pointer;
+}
+
+.small-image-edit:hover{
+  opacity: 1 !important;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 992px) {}

@@ -9,6 +9,5 @@ export async function uploadImage(prevState: any, form: FormData) {
         body: form
     })).json()
     
-
     return result.imageSrc
 }
