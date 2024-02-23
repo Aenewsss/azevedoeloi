@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
-import "../global.css"
 const lato = Lato({ subsets: ["latin"], weight: "400" });
+import "../globals.css";
 
 export const metadata: Metadata = {
   title: 'Admin Azevedo & Eloi',
