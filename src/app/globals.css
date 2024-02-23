@@ -169,5 +169,10 @@ a {
 
 .mw-400{max-width: 400px !important;}
 .mh-500{max-height: 500px !important;}
+.mh-200{max-height: 200px !important;}
+
+.h-420{height: 420px !important;}
+
+.top-n40{top: -40px !important;}
 
 @media screen and (max-width: 992px) {}
