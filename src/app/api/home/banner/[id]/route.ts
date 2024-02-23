@@ -31,19 +31,24 @@ export async function PUT(req: Request, context: any) {
         // Remove os arquivos que já existem, para não poluir a memória
         const oldBanner = await bannerService.getBannerById(params.id)
 
-        await promisify(fs.rm)("public" + oldBanner.large_image)
-        await promisify(fs.rm)("public" + oldBanner.small_image)
+        const isTheSameLargeImage = large_image.name == 'undefined' ? true : false
+        const isTheSameSmallImage = small_image.name == 'undefined' ? true : false
+
+        if (!isTheSameLargeImage) fs.rmSync("public" + oldBanner.large_image)
+        if (!isTheSameSmallImage) fs.rmSync("public" + oldBanner.small_image)
+
+        const { id: lastBannerId } = await bannerService.getLastBannerAdded()
 
         // Adiciona os novos arquivos em suas devidas pastas
-        const largeImagePath = PathPublicImagesEnum.BANNERS_DESKTOP + large_image.name
-        const smallImagePath = PathPublicImagesEnum.BANNERS_MOBILE + small_image.name
+        const largeImagePath = PathPublicImagesEnum.BANNERS_DESKTOP + (Number(lastBannerId) + 1) + (isTheSameLargeImage ? oldBanner.large_image : large_image.name)
+        const smallImagePath = PathPublicImagesEnum.BANNERS_MOBILE + (Number(lastBannerId) + 1) + (isTheSameSmallImage ? oldBanner.small_image : small_image.name)
 
-        fs.writeFile(largeImagePath, bufferLarge, (err) => { if (err) console.error(err) })
-        fs.writeFile(smallImagePath, bufferSmall, (err) => { if (err) console.error(err) })
-
+        if (!isTheSameLargeImage) fs.writeFileSync(largeImagePath, bufferLarge)
+        if (!isTheSameSmallImage) fs.writeFileSync(smallImagePath, bufferSmall)
+        
         const bannerToUpdate: IBanner = {
-            large_image: largeImagePath.replace("public", ""),
-            small_image: smallImagePath.replace("public", ""),
+            large_image: isTheSameLargeImage ? oldBanner.large_image : largeImagePath.replace("public", ""),
+            small_image: isTheSameSmallImage ? oldBanner.small_image : smallImagePath.replace("public", ""),
             link
         }
 
@@ -61,8 +66,8 @@ export async function DELETE(req: Request, context: any) {
         // Remove os arquivos que já existem, para não poluir a memória
         const oldBanner = await bannerService.getBannerById(params.id)
 
-        await promisify(fs.rm)("public" + oldBanner.large_image)
-        await promisify(fs.rm)("public" + oldBanner.small_image)
+        fs.rmSync("public" + oldBanner.large_image)
+        fs.rmSync("public" + oldBanner.small_image)
 
         const banner = await bannerService.deleteBanner(params.id)
 
