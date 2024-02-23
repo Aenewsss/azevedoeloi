@@ -78,7 +78,7 @@ export default function ListBannerForm() {
                         <label className="fs-5 fw-medium" htmlFor={`formLink${banner.id}`}>Link</label>
                         <span className="fs-14">Link que deve abrir ao clicar no banner.</span>
                         <input
-                            disabled={!sameIdCurrentBanner(banner.id!)!}
+                        disabled={!sameIdCurrentBanner(banner.id!)!}
                             type="text"
                             className="form-control w-100"
                             name={`link`}
