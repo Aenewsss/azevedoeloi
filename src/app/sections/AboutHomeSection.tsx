@@ -24,7 +24,7 @@ export default function AboutHome() {
                         <h2 className="fs-2 fw-semibold text-uppercase">{about?.title}</h2>
                         <p className="fs-5">{about?.text}</p>
                         <div>
-                            <Button text={about?.button_text!} />
+                            <Button link="/sobre-o-escritorio" text={about?.button_text!} />
                         </div>
                     </div>
 

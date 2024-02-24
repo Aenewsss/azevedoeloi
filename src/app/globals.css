@@ -62,6 +62,11 @@ ul{
   background-color: var(--main-color);
 }
 
+.text-highlight{
+  color: #777777 !important;
+  text-decoration: none !important;
+}
+
 .text-main {
   color: var(--main-color) !important;
 }
