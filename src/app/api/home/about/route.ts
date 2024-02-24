@@ -3,9 +3,9 @@ import bannerService from "./about-home.service";
 
 export async function GET() {
     try {
-        const banners = await bannerService.getAboutHome()
+        const about = await bannerService.getAboutHome()
 
-        return NextResponse.json({ banners })
+        return NextResponse.json({ about })
     } catch (error) {
         return NextResponse.json({ error })
     }

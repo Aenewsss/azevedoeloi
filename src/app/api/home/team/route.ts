@@ -3,9 +3,9 @@ import teamHomeService from "./team-home.service";
 
 export async function GET() {
     try {
-        const teamHome = await teamHomeService.getTeamHome()
+        const team = await teamHomeService.getTeamHome()
 
-        return NextResponse.json({ teamHome })
+        return NextResponse.json({ team })
     } catch (error) {
         return NextResponse.json({ error })
     }

@@ -4,8 +4,6 @@ import { revalidatePath } from "next/cache"
 
 export async function addBanner(prevState: any, form: FormData) {
 
-    console.log('form before add banner', form)
-
     const result: { newBanner: string } | { error: string } = await (await fetch(`http://localhost:3000/api/home/banner`, {
         method: "POST",
         body: form

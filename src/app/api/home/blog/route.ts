@@ -3,9 +3,9 @@ import blogHomeService from "./blog-home.service";
 
 export async function GET() {
     try {
-        const blogHome = await blogHomeService.getBlogHome()
+        const blog = await blogHomeService.getBlogHome()
 
-        return NextResponse.json({ blogHome })
+        return NextResponse.json({ blog })
     } catch (error) {
         return NextResponse.json({ error })
     }
