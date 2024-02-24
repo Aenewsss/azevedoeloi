@@ -28,15 +28,19 @@ export async function PUT(req: Request, context: any) {
         // Remove os arquivos que já existem, para não poluir a memória
         const oldHighlight = await highlightsService.getHighlightHomeById(params.id)
 
-        await promisify(fs.rm)("public" + oldHighlight.icon)
+        const isTheSameIcon = icon.name == 'undefined' ? true : false
+
+        !isTheSameIcon && fs.rmSync("public" + oldHighlight.icon)
 
         // Adiciona os novos arquivos em suas devidas pastas
-        const iconImagePath = PathPublicImagesEnum.ICONS + icon.name
+        const { id: lastBannerId } = await highlightsService.getLastAdded()
+        
+        const iconImagePath = PathPublicImagesEnum.ICONS + (Number(lastBannerId) + 1) + icon.name
 
-        fs.writeFile(iconImagePath, bufferIcon, (err) => { if (err) console.error(err) })
+        !isTheSameIcon && fs.writeFileSync(iconImagePath, bufferIcon)
 
         const highlightToUpdate: IHighlightsHome = {
-            icon: iconImagePath.replace("public", ""),
+            icon: isTheSameIcon ? oldHighlight.icon : iconImagePath.replace("public", ""),
             title,
             link
         }
@@ -54,8 +58,7 @@ export async function DELETE(req: Request, context: any) {
 
         // Remove os arquivos que já existem, para não poluir a memória
         const oldHighlight = await highlightsService.getHighlightHomeById(params.id)
-
-        await promisify(fs.rm)("public" + oldHighlight.icon)
+        fs.rmSync("public" + oldHighlight.icon)
 
         const highlightRemoved = await highlightsService.deleteHighlightHome(params.id)
 

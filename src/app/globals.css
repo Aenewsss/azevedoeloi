@@ -189,5 +189,9 @@ a {
   opacity: 1 !important;
   cursor: pointer;
 }
+.icon-edit:hover{
+  opacity: 1 !important;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 992px) {}

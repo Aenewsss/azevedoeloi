@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useFormState } from "react-dom";
 import { IBanner } from "@/interfaces/banner.interface";
-import NewBannerButton from "@/components/Buttons/NewBannerButton";
+import SaveButton from "@/components/Buttons/SaveButton";
 import { useRouter } from "next/navigation";
 
 interface IProps {
@@ -55,6 +55,6 @@ export default function AddBannerForm(props: IProps) {
 
         {errorMessageAdd?.error && <p className="mt-3 text-danger">{errorMessageAdd.error}</p>}
 
-        <NewBannerButton />
+        <SaveButton />
     </form>
 }

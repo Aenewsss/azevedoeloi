@@ -2,7 +2,7 @@
 
 import { revalidateTag } from "next/cache"
 
-export async function addHighlights(prevState: any, form: FormData) {
+export async function addHighlightAction(prevState: any, form: FormData) {
 
     const result = await (await fetch(`http://localhost:3000/api/home/highlights`, {
         method: "POST",
@@ -11,8 +11,8 @@ export async function addHighlights(prevState: any, form: FormData) {
 
     if (result.bannerUpdated) {
         revalidateTag('highlights')
-        return { blogHomeUpdated: result.blogHomeUpdated, error: "" }
+        return { newHighlight: result.newHighlight, error: "" }
     }
-    return { error: result.error, blogHomeUpdated: "" }
+    return { error: result.error, newHighlight: "" }
 
 }

@@ -32,6 +32,14 @@ class HighlightsHomeService {
     async deleteHighlightHome(id: string) {
         return (await db.query(`DELETE FROM highlights_home WHERE id = ${id} RETUNING *`)).rows[0]
     }
+
+    async getLastAdded(){
+        try{
+            return (await db.query(`SELECT  * FROM highlights_home ORDER BY id DESC LIMIT 1`)).rows[0] || {id: "0"}
+        } catch(e) {
+            return {id: "0"}
+        }
+    }
 }
 
 export default new HighlightsHomeService()

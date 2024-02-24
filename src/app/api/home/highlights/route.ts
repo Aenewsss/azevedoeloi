@@ -5,9 +5,9 @@ import highlightsService from "./highlights.service";
 
 export async function GET() {
     try {
-        const highlightsHome = await highlightsService.getAllHighlightsHome()
+        const highlights = await highlightsService.getAllHighlightsHome()
 
-        return NextResponse.json({ highlightsHome })
+        return NextResponse.json({ highlights })
     } catch (error) {
         return NextResponse.json({ error })
     }
@@ -23,12 +23,14 @@ export async function POST(req: Request) {
 
         const bufferIcon = Buffer.from(await icon.arrayBuffer())
 
-        const largeImagePath = PathPublicImagesEnum.ICONS + icon.name
+        const { id: lastBannerId } = await highlightsService.getLastAdded()
 
-        fs.writeFile(largeImagePath, bufferIcon, (err) => { if (err) console.error(err) })
+        const iconPath = PathPublicImagesEnum.ICONS + (Number(lastBannerId) + 1) + icon.name
+
+        fs.writeFileSync(iconPath, bufferIcon)
 
         const newHighlight = await highlightsService.createHighlightHome({
-            icon: largeImagePath.replace("public", ""),
+            icon: iconPath.replace("public", ""),
             title,
             link
         })

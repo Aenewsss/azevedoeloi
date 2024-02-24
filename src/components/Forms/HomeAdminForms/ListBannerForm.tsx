@@ -1,6 +1,6 @@
 import CancelBannerButton from "@/components/Buttons/CancelBannerButton";
 import DeleteBannerButton from "@/components/Buttons/DeleteBannerButton";
-import SaveBannerButton from "@/components/Buttons/SaveBannerButton";
+import SaveChanges from "@/components/Buttons/SaveChangesButton";
 import { updateBanner } from "@/app/actions/update-banner.action";
 import { useEffect, useState } from "react";
 import { useFormState } from "react-dom";
@@ -43,7 +43,7 @@ export default function ListBannerForm() {
         return (currentBannerToEdit && currentBannerToEdit.id == bannerId)
     }
 
-    if (banners.length == 0) return <p>Carregando</p>
+    if (banners.length == 0) return <p>Nenhum banner adicionado</p>
 
     return banners.map((banner => (
         <div className=" border-bottom border-black pb-5 mt-3">
@@ -89,7 +89,7 @@ export default function ListBannerForm() {
                         <span onClick={() => changeEditing(banner.id!)} role="button" className="text-primary">Click aqui para editar o link</span>
                     </div>
                 </div>
-                {editing.currentEditing && <SaveBannerButton />}
+                {editing.currentEditing && <SaveChanges />}
             </form>
             {!editing.currentEditing
                 ? <DeleteBannerButton bannerId={banner.id!} />

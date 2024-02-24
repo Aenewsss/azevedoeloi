@@ -26,7 +26,6 @@ export async function POST(req: Request) {
             Buffer.from(await small_image.arrayBuffer())
         ]
 
-        console.log('lastBannerId')
         const { id: lastBannerId } = await bannerService.getLastBannerAdded()
 
         const largeImagePath = PathPublicImagesEnum.BANNERS_DESKTOP + (Number(lastBannerId) + 1) + large_image.name
