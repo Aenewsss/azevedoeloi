@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/Buttons/Button";
 import { IAboutHome } from "@/interfaces/about-home.interface";
 import { useEffect, useState } from "react";

@@ -1,7 +1,6 @@
-"use client"
-
 import AboutHomeSection from "./sections/AboutHomeSection";
 import HighlightsHomeSection from "./sections/HighlightsHomeSection";
+import TeamHomeSection from "./sections/TeamHomeSection";
 
 export default function Home() {
 
@@ -9,6 +8,7 @@ export default function Home() {
     <main className="text-black">
       <AboutHomeSection />
       <HighlightsHomeSection />
+      <TeamHomeSection />
     </main>
   );
 }

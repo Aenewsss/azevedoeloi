@@ -140,6 +140,10 @@ ul{
   bottom: -20px;
 }
 
+.box-shadow-white {
+  box-shadow: 4px 4px 4px 0 rgba(0,0,0,0.1);
+}
+
 #navbarNav.show {
   background-color: black;
 }
@@ -166,6 +170,8 @@ ul{
 .images-public {
   width: 25%;
 }
+
+.h-590{height: 590px !important;}
 
 .carousel-control-next {
   right: -4vw !important;

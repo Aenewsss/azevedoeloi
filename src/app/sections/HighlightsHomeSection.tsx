@@ -1,3 +1,5 @@
+"use client"
+
 import { IHighlightsHome } from "@/interfaces/highlights-home.interface";
 import Image from "next/image";
 import Link from "next/link";
