@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@/components/Buttons/Button";
+import { PathEnum } from "@/enums/path.enum";
 import { IBlogHome } from "@/interfaces/blog-home.interface";
 import { useEffect, useState } from "react";
 
@@ -24,7 +25,7 @@ export default function BlogHomeSection() {
                     <div className="col-md-4"></div>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <Button link="/blog" text={blog?.button_text!} />
+                    <Button link={PathEnum.BLOG} text={blog?.button_text!} />
                 </div>
             </div>
         </section>

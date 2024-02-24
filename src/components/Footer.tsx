@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "./Buttons/Button";
 import Link from "next/link";
+import { PathEnum } from "@/enums/path.enum";
 
 export default function Footer() {
     return (
@@ -10,7 +11,7 @@ export default function Footer() {
                     <div className="border border-white d-flex gap-3 flex-column align-items-center justify-content-center py-5">
                         <h2 className="fs-4 fw-semibold text-center">PRECISA DE AJUDA COM O SEU CASO? ENTRE<br />EM CONTATO CONOSCO</h2>
                         <span className="fs-5">Fale com nossa equipe e nos informe como podemos te ajudar.</span>
-                        <Button link="/fale-conosco" text="FALE CONOSCO" />
+                        <Button link={PathEnum.CONTACT} text="FALE CONOSCO" />
                     </div>
                 </div>
                 <div className="position-absolute opacity-50 w-100 h-100 bg-dark top-0 z-1"></div>

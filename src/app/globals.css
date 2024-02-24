@@ -214,5 +214,5 @@ ul{
 }
 
 @media screen and (min-width: 992px) {
-  .w-md-250{width: 250px !important;}
+  .w-md-250{width: 200px !important;}
 }

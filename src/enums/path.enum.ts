@@ -1,5 +1,13 @@
 export enum PathEnum {
     MAIN = "/",
+    ABOUT = "/sobre-o-escritorio-azevedo-eloi",
+    TEAM ="/equipe",
+    AREAS = "/areas",
+    BLOG = "/blog",
+    CONTACT = "/contato",
+    WORK = "/trabalhe-conosco",
+    PARTNER = "/seja-um-parceiro",
+    
     LOGIN = "/login",
 
     ADMIN = "/admin",
