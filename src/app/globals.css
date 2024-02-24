@@ -49,6 +49,11 @@ a {
   color: unset !important;
 }
 
+ul{
+  padding: unset !important;
+  list-style: none !important;
+}
+
 .btn-main {
   background-color: var(--main-color) !important;
 }
@@ -65,7 +70,10 @@ a {
   width: 150px !important;
 }
 
-
+.bg-footer{
+  background: url("/background_rodape.webp") no-repeat center;
+  background-size: cover;
+}
 
 .bg-sec {
   background-color: var(--secondary) !important;
@@ -194,4 +202,6 @@ a {
   cursor: pointer;
 }
 
-@media screen and (max-width: 992px) {}
+@media screen and (min-width: 992px) {
+  .w-md-250{width: 250px !important;}
+}

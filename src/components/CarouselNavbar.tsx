@@ -1,19 +1,40 @@
-import Image from "next/image";
+"use client"
 
+import { IBanner } from "@/interfaces/banner.interface";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 const CarouselNavbar = () => {
+
+    const [banners, setBanners] = useState<IBanner[]>();
+
+    useEffect(() => {
+        async function getBanners() {
+            const { banners } = await (await fetch(`http://localhost:3000/api/home/banner`)).json()
+            setBanners(banners)
+        }
+        getBanners()
+    }, []);
+
+    function renderImageByScreenWidth(banner: IBanner): string {
+        const screenWidth = window.innerWidth
+        return screenWidth >= 992 ? banner.large_image : banner.small_image
+    }
+
     return (
         <div className="position-absolute w-100 top-0 h-100" >
             <div id="carouselExample" className="carousel slide h-100" data-bs-ride="carousel">
                 <div className="carousel-inner h-100">
-                    <div className="h-100 carousel-item active ">
-                        <Image fill src="https://azevedoeloi.adv.br/wp-content/uploads/2020/05/banner2.jpg" className="d-block h-100 w-100 object-fit-cover " alt="..." />
-                    </div>
-                    <div className="h-100 carousel-item">
-                        <Image fill src="https://azevedoeloi.adv.br/wp-content/uploads/2020/09/daniel-duarte-gXxCQNYBRPw-unsplash-1600x600.jpg" className=" object-fit-cover d-block h-100 w-100" alt="..." />
-                    </div>
-                    <div className="h-100 carousel-item">
-                        <Image fill src="https://azevedoeloi.adv.br/wp-content/uploads/2020/09/daniel-duarte-gXxCQNYBRPw-unsplash-1600x600.jpg" className=" object-fit-cover d-block h-100 w-100" alt="..." />
-                    </div>
+                    {banners?.map((banner, index) => (
+                        index == 0 ?
+                            <div className="h-100 carousel-item active ">
+                                <Image fill src={renderImageByScreenWidth(banner)} className="h-100 w-100 object-fit-cover " alt={`Imagem ${renderImageByScreenWidth}`} />
+                            </div>
+                            :
+                            <div className="h-100 carousel-item">
+                                <Image fill src={renderImageByScreenWidth(banner)} className=" object-fit-cover h-100 w-100" alt={`Imagem ${renderImageByScreenWidth}`} />
+                            </div>
+
+                    ))}
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
