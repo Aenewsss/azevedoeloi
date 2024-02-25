@@ -18,8 +18,8 @@ export default function Footer() {
             </div>
             <div className="py-5" style={{ backgroundColor: "#2E2E2D" }}>
                 <div className="container d-flex flex-column gap-4">
-                    <div className="d-flex justify-content-between">
-                        <ul className="d-flex gap-3">
+                    <div className="d-flex justify-content-between flex-md-nowrap flex-wrap mb-md-0 mb-4">
+                        <ul className="d-flex gap-3 flex-md-nowrap flex-wrap  mb-md-0 mb-4">
                             <li><Link className="fs-5" href="/sobre-o-escritorio-azevedo-eloi">O Escritório</Link></li>
                             <li><Link className="fs-5" href="/equipe">Sócias</Link></li>
                             <li><Link className="fs-5" href="/areas">Áreas de atuação</Link></li>
@@ -40,7 +40,7 @@ export default function Footer() {
                             </Link>
                         </div>
                     </div>
-                    <div className="d-flex justify-content-between">
+                    <div className="d-flex justify-content-between flex-md-nowrap flex-wrap">
                         <div className="d-flex flex-column">
                             <p className="fs-6">
                                 <strong>Informações de contato:</strong><br />

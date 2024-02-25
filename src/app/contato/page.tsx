@@ -69,7 +69,7 @@ export default function ContactPage() {
                     <SubmitButton />
                 </form>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 mt-md-0 mt-5">
                 <div className="d-flex flex-column gap-3">
                     <h3 className="fw-semibold fs-5">Informações de contato</h3>
                     <p>{contact?.contact_info_text}</p>

@@ -5,9 +5,9 @@ export default function TeamPage() {
     return <main className="container text-black mt-5 pt-4">
         <div className="row" id="team1">
             <div className="col-md-6">
-                <Image className="rounded" src="/team1.webp" width={500} height={500} alt="ALESSANDRA ELOI" />
+                <Image className="rounded w-100" src="/team1.webp" width={500} height={500} alt="ALESSANDRA ELOI" />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6  mt-md-0 mt-3">
                 <div className="d-flex flex-column">
                     <h2 className="fw-semibold fs-4">ALESSANDRA ELOI MARTINS RIBEIRO</h2>
                     <div className="d-flex flex-column text-secondary text-uppercase">
@@ -26,9 +26,9 @@ export default function TeamPage() {
         <hr className="my-5"/>
         <div className="row d-flex mt-5 flex-row-reverse" id="team2">
             <div className="col-md-6 d-flex justify-content-end">
-                <Image className="rounded" src="/team2.webp" width={500} height={500} alt="CINTYA AZEVEDO" />
+                <Image className="rounded w-100" src="/team2.webp" width={500} height={500} alt="CINTYA AZEVEDO" />
             </div>
-            <div className="col-md-6 d-flex">
+            <div className="col-md-6 d-flex mt-md-0 mt-3">
                 <div className="d-flex flex-column">
                     <h2 className="fw-semibold fs-4">CINTYA AZEVEDO GONÇALVES</h2>
                     <div className="d-flex flex-column text-secondary text-uppercase">
@@ -45,9 +45,9 @@ export default function TeamPage() {
         <hr className="my-5"/>
         <div className="row" id="team3">
             <div className="col-md-6">
-                <Image className="rounded" src="/team3.webp" width={500} height={500} alt="AZEVEDO & ELOI ADVOGADOS ASSOCIADOS" />
+                <Image className="rounded w-100" src="/team3.webp" width={500} height={500} alt="AZEVEDO & ELOI ADVOGADOS ASSOCIADOS" />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6  mt-md-0 mt-3">
                 <div className="d-flex flex-column">
                     <h2 className="fw-semibold fs-4">AZEVEDO & ELOI ADVOGADOS ASSOCIADOS</h2>
                     <div className="d-flex flex-column text-secondary text-uppercase">

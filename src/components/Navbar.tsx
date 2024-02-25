@@ -102,7 +102,7 @@ const Navbar = () => {
             {pathname != '/'
                 ? <>
                     <Image className="position-absolute top-0" fill src="/banner_geral.webp" alt="Banner" />
-                    <h1 className="display-4 text-white text-center w-100 mt-5 position-absolute z-2">{getPageTitle()}</h1>
+                    <h1 className="d-md-block d-none display-4 text-white text-center w-100 mt-5 position-absolute z-2">{getPageTitle()}</h1>
                 </>
                 : <CarouselNavbar />}
         </div>
