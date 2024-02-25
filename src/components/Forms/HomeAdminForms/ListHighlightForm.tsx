@@ -1,4 +1,4 @@
-import { updateHighlight } from "@/app/actions/update-highlight.action";
+import { updateHighlight } from "@/actions/update-highlight.action";
 import { useEffect, useState } from "react";
 import { useFormState } from "react-dom";
 import Image from "next/image";

@@ -1,7 +1,7 @@
 import CancelBannerButton from "@/components/Buttons/CancelBannerButton";
 import DeleteBannerButton from "@/components/Buttons/DeleteBannerButton";
 import SaveChanges from "@/components/Buttons/SaveChangesButton";
-import { updateBanner } from "@/app/actions/update-banner.action";
+import { updateBanner } from "@/actions/update-banner.action";
 import { useEffect, useState } from "react";
 import { useFormState } from "react-dom";
 import { IBanner } from "@/interfaces/banner.interface";

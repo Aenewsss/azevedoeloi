@@ -1,4 +1,4 @@
-import { changeHomeBlogAction } from "@/app/actions/change-home-blog.action";
+import { changeHomeBlogAction } from "@/actions/change-home-blog.action";
 import { IBlogHome } from "@/interfaces/blog-home.interface";
 import { useEffect, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";

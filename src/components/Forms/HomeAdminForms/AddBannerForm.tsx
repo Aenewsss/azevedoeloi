@@ -1,4 +1,4 @@
-import { addBanner } from "@/app/actions/add-banner.action";
+import { addBanner } from "@/actions/add-banner.action";
 import Image from "next/image";
 import { useState } from "react";
 import { useFormState } from "react-dom";

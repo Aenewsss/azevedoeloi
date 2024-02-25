@@ -1,4 +1,4 @@
-import { changeHomeTeamAction } from "@/app/actions/change-home-team.action";
+import { changeHomeTeamAction } from "@/actions/change-home-team.action";
 import { ITeamHome } from "@/interfaces/team-home.interface";
 import { useEffect, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";

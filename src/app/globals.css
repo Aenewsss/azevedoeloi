@@ -1,5 +1,5 @@
 :root {
-  --main-color: #b5987a;
+  --main-color: rgb(181, 152, 122);
   --secondary: #F9F9F9;
   --gray: #f2f2f2
 }
@@ -211,6 +211,10 @@ ul{
 .icon-edit:hover{
   opacity: 1 !important;
   cursor: pointer;
+}
+
+.h-areas-cards{
+  min-height: 480px !important;
 }
 
 @media screen and (min-width: 992px) {

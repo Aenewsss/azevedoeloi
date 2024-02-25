@@ -11,18 +11,38 @@ const Navbar = () => {
     const pathname = usePathname()
 
     const [NavHeight, setNavHeight] = useState<CSSProperties>(
-        typeof window != 'undefined' ? window.innerWidth >= 992 ? { height: '75vh' } : { height: '35vh' } : { height: '75vh' }
+        typeof window != 'undefined'
+            ? window.innerWidth >= 992
+                ? pathname == PathEnum.MAIN
+                    ? { height: '75vh' }
+                    : { height: '55vh' }
+                : { height: '35vh' }
+            : { height: '55vh' }
     );
 
     useEffect(() => {
-        window.addEventListener('resize', changeNavHeight)
+        typeof window != 'undefined' && window.addEventListener('resize', changeNavWidth)
     }, [])
 
-    function changeNavHeight() {
-        if (pathname == PathEnum.MAIN && window.innerWidth >= 992) {
-            setNavHeight({ height: '75vh' })
-        } else if (pathname == PathEnum.MAIN) {
-            setNavHeight({ height: '35vh' })
+    function changeNavWidth() {
+        typeof window != 'undefined'
+            ? window.innerWidth >= 992
+                ? pathname == PathEnum.MAIN
+                    ? setNavHeight({ height: '75vh' })
+                    : setNavHeight({ height: '55vh' })
+                : setNavHeight({ height: '35vh' })
+            : setNavHeight({ height: '75vh' })
+    }
+
+    function getPageTitle() {
+        switch (pathname) {
+            case PathEnum.ABOUT: return "O Escritório"
+            case PathEnum.TEAM: return "Sócias"
+            case PathEnum.AREAS: return "Áreas de Atuação"
+            case PathEnum.BLOG: return "Blog"
+            case PathEnum.CONTACT: return "Fale Conosco"
+            case PathEnum.WORK: return "Trabalhe Conosco"
+            case PathEnum.PARTNER: return "Seja um Parceiro"
         }
     }
 
@@ -82,7 +102,7 @@ const Navbar = () => {
             {pathname != '/'
                 ? <>
                     <Image className="position-absolute top-0" fill src="/banner_geral.webp" alt="Banner" />
-                    <h1 className="display-4 text-white text-center w-100 mt-5 position-absolute z-2">Sócias</h1>
+                    <h1 className="display-4 text-white text-center w-100 mt-5 position-absolute z-2">{getPageTitle()}</h1>
                 </>
                 : <CarouselNavbar />}
         </div>

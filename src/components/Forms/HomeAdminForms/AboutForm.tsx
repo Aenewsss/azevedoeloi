@@ -1,6 +1,6 @@
 "use client"
 
-import { changeHomeAboutAction } from "@/app/actions/change-home-about.action";
+import { changeHomeAboutAction } from "@/actions/change-home-about.action";
 import { IAboutHome } from "@/interfaces/about-home.interface"
 import { useEffect, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";

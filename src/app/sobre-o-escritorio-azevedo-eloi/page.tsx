@@ -2,63 +2,27 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function AboutPage() {
-    return <main className="container text-black">
-        <div className="row" id="team1">
-            <div className="col-md-6">
-                <Image className="rounded" src="/team1.webp" width={500} height={500} alt="ALESSANDRA ELOI" />
-            </div>
-            <div className="col-md-6">
-                <div className="d-flex flex-column">
-                    <h2 className="fw-semibold fs-4">ALESSANDRA ELOI MARTINS RIBEIRO</h2>
-                    <div className="d-flex flex-column text-secondary text-uppercase">
-                        <Link href="mailto:alessandraeloi@azevedoeloi.adv.br">alessandraeloi@azevedoeloi.adv.br</Link>
-                        <span>OAB/DF - 54.020</span>
+    return <main className="container text-black mt-5 pt-4">
+        <div className="row d-flex justify-content-center">
+            <div className="col-md-7">
+                <article className="fs-5 d-flex flex-column gap-4">
+                    <p>A Azevedo &amp; Eloi Advogados Associados atua de forma personalizada, com dedicação exclusiva para cada demanda. Assim, é possível ofertar soluções jurídicas adequadas e criativas, com foco nos interesses e objetivos de cada cliente.</p>
+                    <p>Com estrutura sólida nos dedicamos a várias áreas do Direito, prestando assessoria consultiva e contenciosa para empresas e pessoas físicas. Nossa finalidade é orientar os clientes de acordo com as suas necessidades. </p>
+                    <div className="d-flex justify-content-between">
+                        <p className="pe-4">Temos como objetivo principal proporcionar aos clientes e parceiros credibilidade e satisfação por meio da atuação ética. Nossa base é disciplinada nas normas previstas no
+                            <Link className="text-decoration-underline" href="http://www.planalto.gov.br/ccivil_03/leis/l8906.htm" target="_blank" rel="noreferrer noopener">&nbsp;Estatuto da OAB</Link>.
+                        </p>
+                        <Image className="rounded-pill" width={350} height={150} src="/sobre_escritorio.webp" alt="Nossas sócias" />
                     </div>
-                    <div className="d-flex flex-column gap-3 mt-3 fs-5">
-                        <p className="text-start">Advogada, especialista nas áreas de Direito Civil, com ênfase em Direito de Família, Direito Sucessório e Contratos.</p>
-                        <p className="text-start">Possui experiência nos ramos cível, imobiliário, penal e previdenciário.</p>
-                        <p className="text-start">Pós-graduanda em Ciência Política, presta serviço de consultoria jurídica e legislativa na execução de proposições: projetos de lei, projetos de lei complementar, propostas de emenda à constituição e decretos legislativos.</p>
-                        <p><Link href="http://lattes.cnpq.br/5928660128544231">Currículo Lattes</Link></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr className="my-5"/>
-        <div className="row d-flex mt-5 flex-row-reverse" id="team2">
-            <div className="col-md-6 d-flex justify-content-end">
-                <Image className="rounded" src="/team2.webp" width={500} height={500} alt="CINTYA AZEVEDO" />
-            </div>
-            <div className="col-md-6 d-flex">
-                <div className="d-flex flex-column">
-                    <h2 className="fw-semibold fs-4">CINTYA AZEVEDO GONÇALVES</h2>
-                    <div className="d-flex flex-column text-secondary text-uppercase">
-                        <Link href="mailto:cintyaazevedo@azevedoeloi.adv.br">CINTYAAZEVEDO@AZEVEDOELOI.ADV.BR</Link>
-                        <span>OAB/DF - 55.833</span>
-                    </div>
-                    <div className="d-flex flex-column gap-3 mt-3 fs-5">
-                        <p className="text-start">Graduada pelo Centro Universitário UniProcessus. Pós-graduada em Direito Civil e Processo Civil pela Escola da Magistratura do Distrito Federal – ESMA/DF. Pós-Graduada em Direito Processual e Material da Família: À luz do Novo CPC e do Entendimento do STF e STJ. Pós-graduanda em Direito Previdenciário. Foi Membra da Comissão de Direito Imobiliário e Condominial da OAB/DF (2019-2021).</p>
-                        <p className="text-start">Tem atuação profissional focada na área Civil, Condominial, Imobiliário, Violência Doméstica e Familiar, e, previdenciário.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr className="my-5"/>
-        <div className="row" id="team3">
-            <div className="col-md-6">
-                <Image className="rounded" src="/team3.webp" width={500} height={500} alt="AZEVEDO & ELOI ADVOGADOS ASSOCIADOS" />
-            </div>
-            <div className="col-md-6">
-                <div className="d-flex flex-column">
-                    <h2 className="fw-semibold fs-4">AZEVEDO & ELOI ADVOGADOS ASSOCIADOS</h2>
-                    <div className="d-flex flex-column text-secondary text-uppercase">
-                        <Link href="mailto:azevedoeloi@azevedoeloi.adv.br">AZEVEDOELOI@AZEVEDOELOI.ADV.BR</Link>
-                        <span>PARCEIROS COM ATUAÇÃO EM OUTRAS ÁREAS.</span>
-                    </div>
-                    <div className="d-flex flex-column gap-3 mt-3 fs-5">
-                        <p className="text-start">Os parceiros da Azevedo & Eloi Advogados Associados tem a expertise necessária para atender nossos clientes, buscando alcançar o êxito de suas demandas.</p>
-                        <p className="text-start">Sob a supervisão e acompanhamento do escritório, os parceiros chegam para somar, oferecendo atendimento em outras áreas, fazendo com que o serviço prestado seja ainda mais amplo e de qualidade.</p>
-                    </div>
-                </div>
+                    <p>Acompanhando as mudanças legislativas e os julgados da magistratura, nosso escritório se mantém em constante aprendizado. Desenvolvemos habilidades e estamos em constante especialização. Dessa forma, conseguimos nos adaptar à necessidade dos clientes, sempre buscando prestar um serviço proeminente.</p>
+                    <p>Atuamos em Brasília e entorno, Goiás e Minas Gerais.</p>
+                    <h3><strong>Missão</strong></h3>
+                    <p>Nossa missão é superar as expectativas dos clientes com a oferta de serviços jurídicos personalizados. Aliando eficiência, segurança, transparência e ética na resolução de questões jurídicas sensíveis, atingimos nossa meta.</p>
+                    <h3><strong>Visão</strong></h3>
+                    <p>Prestar serviços de grande relevância para a sociedade, contribuindo para a administração da justiça, garantindo os direitos dos cidadãos. Ser um prestador de serviço de referência nacional, pela qualidade técnica e inovação, bem como pela satisfação profissional de sua equipe.</p>
+                    <h3><strong>Valores do Escritório Azevedo &amp; Eloi</strong></h3>
+                    <p>Nosso escritório Azevedo &amp; Eloi Advogados Associados atua baseado no Código de Ética e Disciplina da Advocacia, além de atender ao Princípio da Moralidade e dos Bons Costumes, base do Direito.</p>
+                </article>
             </div>
         </div>
     </main>

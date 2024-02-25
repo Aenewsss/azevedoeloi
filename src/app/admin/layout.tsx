@@ -29,7 +29,6 @@ export default function AdminLayout({
           <link rel="icon" sizes="192x192" href="favicon.png"></link>
         </head>
         <body className={lato.className}>
-          {/* <Navbar /> */}
           {children}
         </body>
       </html>

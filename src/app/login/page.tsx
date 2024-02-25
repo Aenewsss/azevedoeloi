@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useFormState, useFormStatus } from "react-dom";
-import { authenticate } from "../actions/authenticate.action";
+import { authenticate } from "../../actions/authenticate.action";
 import { useRouter } from "next/navigation";
 
 export default function Login() {

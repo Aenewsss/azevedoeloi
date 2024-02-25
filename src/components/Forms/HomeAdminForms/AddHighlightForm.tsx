@@ -1,4 +1,4 @@
-import { addHighlightAction } from "@/app/actions/add-highlight.action";
+import { addHighlightAction } from "@/actions/add-highlight.action";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useFormState } from "react-dom";
