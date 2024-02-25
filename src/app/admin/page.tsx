@@ -45,7 +45,7 @@ export default function Admin() {
                         </div>
                     </Link>
                 </div>
-                <div className="col-md-4 mb-md-3 mb-0">
+                {/* <div className="col-md-4 mb-md-3 mb-0">
                     <Link href={PathEnum.ADMIN_PARTNER} className="scale h-420 rounded d-flex flex-column gap-3 overflow-hidden border ">
                         <Image className="object-fit-cover w-100 mh-200" quality={100} src="https://img.freepik.com/free-photo/business-concept-with-team-close-up_23-2149151159.jpg?t=st=1708652073~exp=1708655673~hmac=83b8a13c120752aae0d946ce14e08394e0d830a829952dac8f472fa8ebb7a824&w=996" width={300} height={200} alt="" />
                         <div className="p-2">
@@ -53,8 +53,8 @@ export default function Admin() {
                             <p>Aqui, você pode fornecer informações e detalhes sobre como se tornar um parceiro ou patrocinador do seu negócio. Pode incluir formulários de contato ou informações sobre os benefícios de se tornar um parceiro.</p>
                         </div>
                     </Link>
-                </div>
-                <div className="col-md-4 mb-md-3 mb-0">
+                </div> */}
+                {/* <div className="col-md-4 mb-md-3 mb-0">
                     <Link href={PathEnum.ADMIN_WORK} className="scale h-420 rounded d-flex flex-column gap-3 overflow-hidden border ">
                         <Image className="object-fit-cover w-100 mh-200" quality={100} src="https://img.freepik.com/free-photo/young-female-executive-explaines-new-strategy-blonde-employee-glasses-smiling-indoor-portrait-multicultural-collective-working-project-office-using-laptop_197531-3707.jpg?t=st=1708652098~exp=1708655698~hmac=51f7e4567e915ceaf033aeb211198c6eb1b43b9b081ee3af1c728420c4e1522c&w=996" width={300} height={200} alt="" />
                         <div className="p-2">
@@ -62,7 +62,7 @@ export default function Admin() {
                             <p>Nesta seção, os visitantes podem encontrar informações sobre oportunidades de emprego na sua empresa. Você pode listar vagas disponíveis, requisitos de emprego e instruções sobre como se candidatar.</p>
                         </div>
                     </Link>
-                </div>
+                </div> */}
             </div>
 
         </section>

@@ -58,6 +58,8 @@ ul{
   background-color: var(--main-color) !important;
 }
 
+.bg-gray{background-color: var(--gray) !important;}
+
 .bg-main {
   background-color: var(--main-color);
 }
