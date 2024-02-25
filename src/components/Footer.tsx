@@ -29,9 +29,15 @@ export default function Footer() {
                             <li><Link className="fs-5" href="seja-um-parceiro">Seja um parceiro</Link></li>
                         </ul>
                         <div className="d-flex gap-3">
-                            <Image width={30} height={30} src="" alt="Logo Facebook" />
-                            <Image width={30} height={30} src="" alt="Logo Instagram" />
-                            <Image width={30} height={30} src="" alt="Logo Linkedin" />
+                            <Link target="_blank" href="https://www.facebook.com/azevedoeloiadv/">
+                                <Image width={20} height={20} src="/icons/facebook-footer.svg" alt="Logo Facebook" />
+                            </Link>
+                            <Link target="_blank" href="https://www.instagram.com/azevedoeloiadv/">
+                                <Image width={20} height={20} src="/icons/instagram-footer.svg" alt="Logo Instagram" />
+                            </Link>
+                            <Link target="_blank" href="https://www.linkedin.com/in/azevedo-e-eloi-advogados-associados-5140381a6/">
+                                <Image width={20} height={20} src="/icons/linkedin-footer.svg" alt="Logo Linkedin" />
+                            </Link>
                         </div>
                     </div>
                     <div className="d-flex justify-content-between">
