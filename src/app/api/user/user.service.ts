@@ -8,7 +8,7 @@ class UserServiceApi {
             SELECT * FROM users WHERE email = '${email}'
             `)).rows[0]
         } catch (error: any) {
-            console.error(error.message)
+            return error.message
         }
     }
 
