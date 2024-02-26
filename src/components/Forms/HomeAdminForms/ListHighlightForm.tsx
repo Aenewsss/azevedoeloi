@@ -5,6 +5,7 @@ import Image from "next/image";
 import { IHighlightsHome } from "@/interfaces/highlights-home.interface";
 import SaveChangesButton from "@/components/Buttons/SaveChangesButton";
 import { revalidatePath, revalidateTag } from "next/cache";
+import { apiUrl } from "@/constants/api-url.constant";
 
 export default function ListHighlightForm() {
     const [messageUpdate, updateHighlightAction] = useFormState(updateHighlight, { updated: "", error: "" })
