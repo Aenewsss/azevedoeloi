@@ -1,5 +1,6 @@
 "use client"
 
+import { apiUrl } from "@/constants/api-url.constant";
 import { IHighlightsHome } from "@/interfaces/highlights-home.interface";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +11,7 @@ export default function HighlightsHomeSection() {
 
     useEffect(() => {
         async function getHighlights() {
-            const { highlights } = await (await fetch(`http://localhost:3000/api/home/highlights`)).json()
+            const { highlights } = await (await fetch(`${apiUrl}/api/home/highlights`)).json()
             setHighlights(highlights)
         }
         getHighlights()

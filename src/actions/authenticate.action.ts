@@ -1,9 +1,10 @@
 "use server"
 
+import { apiUrl } from "@/constants/api-url.constant"
 import { cookies } from "next/headers"
 
 export async function authenticate(prevState: any, form: FormData) {
-  const result: { token: string } | { error: string } = await (await fetch("http://localhost:3000/api/authenticate", {
+  const result: { token: string } | { error: string } = await (await fetch(`${apiUrl}/api/authenticate`, {
     method: "POST",
     body: form
   })).json()

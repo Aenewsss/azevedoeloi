@@ -15,7 +15,7 @@ export default function ListHighlightForm() {
 
     useEffect(() => {
         async function getHighlights() {
-            const { highlights }: { highlights: IHighlightsHome[] } = await (await fetch(`http://localhost:3000/api/home/highlights`, { next: { tags: ['highlights'] } })).json()
+            const { highlights }: { highlights: IHighlightsHome[] } = await (await fetch(`${apiUrl}/api/home/highlights`, { next: { tags: ['highlights'] } })).json()
             setHighlights(highlights)
         }
         getHighlights()
@@ -101,7 +101,7 @@ export default function ListHighlightForm() {
 
 function DeleteHighlightButton({ highlightId }: { highlightId: string }) {
     async function deleteHighlight() {
-        const response = await (await fetch(`http://localhost:3000/api/home/highlights/${highlightId}`, { method: 'DELETE' })).json()
+        const response = await (await fetch(`${apiUrl}/api/home/highlights/${highlightId}`, { method: 'DELETE' })).json()
         response.highlight && revalidateTag('highlights')
     }
 

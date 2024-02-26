@@ -1,6 +1,7 @@
 "use client"
 
 import { changeHomeAboutAction } from "@/actions/change-home-about.action";
+import { apiUrl } from "@/constants/api-url.constant";
 import { IAboutHome } from "@/interfaces/about-home.interface"
 import { useEffect, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
@@ -17,7 +18,7 @@ export default function AboutForm() {
     }, []);
 
     async function getAbout() {
-        const { about } = await (await fetch(`http://localhost:3000/api/home/about`, { next: { tags: ['home-about'] } })).json()
+        const { about } = await (await fetch(`${apiUrl}/api/home/about`, { next: { tags: ['home-about'] } })).json()
         setAbout(about)
     }
 

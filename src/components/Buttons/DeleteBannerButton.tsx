@@ -1,3 +1,4 @@
+import { apiUrl } from "@/constants/api-url.constant"
 import { revalidatePath } from "next/cache"
 
 interface IProps {
@@ -6,7 +7,7 @@ interface IProps {
 
 export default function DeleteBannerButton(props: IProps) {
     async function deleteBanner() {
-        const response = await (await fetch(`http://localhost:3000/api/home/banner/${props.bannerId}`, { method: 'DELETE' })).json()
+        const response = await (await fetch(`${apiUrl}/api/home/banner/${props.bannerId}`, { method: 'DELETE' })).json()
         response.banner && revalidatePath('/admin/pagina-inicial')
     }
 

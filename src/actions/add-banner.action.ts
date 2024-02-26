@@ -1,10 +1,11 @@
 "use server"
 
+import { apiUrl } from "@/constants/api-url.constant"
 import { revalidatePath } from "next/cache"
 
 export async function addBanner(prevState: any, form: FormData) {
 
-    const result: { newBanner: string } | { error: string } = await (await fetch(`http://localhost:3000/api/home/banner`, {
+    const result: { newBanner: string } | { error: string } = await (await fetch(`${apiUrl}/api/home/banner`, {
         method: "POST",
         body: form
     })).json()

@@ -1,10 +1,11 @@
 "use server"
 
+import { apiUrl } from "@/constants/api-url.constant"
 import { revalidateTag } from "next/cache"
 
 export async function addHighlightAction(prevState: any, form: FormData) {
 
-    const result = await (await fetch(`http://localhost:3000/api/home/highlights`, {
+    const result = await (await fetch(`${apiUrl}/api/home/highlights`, {
         method: "POST",
         body: form
     })).json()
