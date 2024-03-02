@@ -1,9 +1,17 @@
+"use client"
+
 import Image from "next/image";
 import { Button } from "./Buttons/Button";
 import Link from "next/link";
 import { PathEnum } from "@/enums/path.enum";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+
+    const pathname = usePathname()
+
+    if (pathname.includes('admin')) return null
+    
     return (
         <footer className="mt-5 pt-4">
             <div className="bg-footer py-5 position-relative">

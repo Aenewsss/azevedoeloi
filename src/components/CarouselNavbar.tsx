@@ -1,6 +1,6 @@
 "use client"
 
-import { apiUrl } from "@/constants/api-url.constant";
+import { API_URL } from "@/constants/api-url.constant";
 import { IBanner } from "@/interfaces/banner.interface";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -10,7 +10,7 @@ const CarouselNavbar = () => {
 
     useEffect(() => {
         async function getBanners() {
-            const { banners } = await (await fetch(`${apiUrl}/api/home/banner`)).json()
+            const { banners } = await (await fetch(`${API_URL}/api/home/banner`)).json()
             setBanners(banners)
         }
         getBanners()

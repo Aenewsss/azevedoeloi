@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/Buttons/Button";
-import { apiUrl } from "@/constants/api-url.constant";
+import { API_URL } from "@/constants/api-url.constant";
 import { PathEnum } from "@/enums/path.enum";
 import { IBlogHome } from "@/interfaces/blog-home.interface";
 import { useEffect, useState } from "react";
@@ -12,7 +12,7 @@ export default function BlogHomeSection() {
 
     useEffect(() => {
         async function getAbout() {
-            const { blog } = await (await fetch(`${apiUrl}/api/home/blog`)).json()
+            const { blog } = await (await fetch(`${API_URL}/api/home/blog`)).json()
             setBlog(blog)
         }
         getAbout()

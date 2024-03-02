@@ -1,6 +1,6 @@
 "use client"
 
-import { apiUrl } from "@/constants/api-url.constant";
+import { API_URL } from "@/constants/api-url.constant";
 import { PathEnum } from "@/enums/path.enum";
 import { IContact } from "@/interfaces/contact.interface";
 import Link from "next/link";
@@ -12,7 +12,7 @@ export default function ContactPage() {
 
     useEffect(() => {
         async function getContact() {
-            const { contact } = await (await fetch(`${apiUrl}/api/contact`)).json()
+            const { contact } = await (await fetch(`${API_URL}/api/contact`)).json()
             setContact(contact)
         }
         getContact()

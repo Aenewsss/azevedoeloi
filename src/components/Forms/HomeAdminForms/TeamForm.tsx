@@ -1,5 +1,5 @@
 import { changeHomeTeamAction } from "@/actions/change-home-team.action";
-import { apiUrl } from "@/constants/api-url.constant";
+import { API_URL } from "@/constants/api-url.constant";
 import { ITeamHome } from "@/interfaces/team-home.interface";
 import { useEffect, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
@@ -15,7 +15,7 @@ export default function TeamForm() {
     }, []);
 
     async function getTeam() {
-        const { team } = await (await fetch(`${apiUrl}/api/home/team`, { next: { tags: ['home-team'] } })).json()
+        const { team } = await (await fetch(`${API_URL}/api/home/team`, { next: { tags: ['home-team'] } })).json()
         setTeam(team)
     }
 

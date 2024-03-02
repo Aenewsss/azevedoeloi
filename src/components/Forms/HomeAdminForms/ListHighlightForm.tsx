@@ -5,7 +5,7 @@ import Image from "next/image";
 import { IHighlightsHome } from "@/interfaces/highlights-home.interface";
 import SaveChangesButton from "@/components/Buttons/SaveChangesButton";
 import { revalidatePath, revalidateTag } from "next/cache";
-import { apiUrl } from "@/constants/api-url.constant";
+import { API_URL } from "@/constants/api-url.constant";
 
 export default function ListHighlightForm() {
     const [messageUpdate, updateHighlightAction] = useFormState(updateHighlight, { updated: "", error: "" })
@@ -16,7 +16,7 @@ export default function ListHighlightForm() {
 
     useEffect(() => {
         async function getHighlights() {
-            const { highlights }: { highlights: IHighlightsHome[] } = await (await fetch(`${apiUrl}/api/home/highlights`, { next: { tags: ['highlights'] } })).json()
+            const { highlights }: { highlights: IHighlightsHome[] } = await (await fetch(`${API_URL}/api/home/highlights`, { next: { tags: ['highlights'] } })).json()
             setHighlights(highlights)
         }
         getHighlights()
@@ -102,7 +102,7 @@ export default function ListHighlightForm() {
 
 function DeleteHighlightButton({ highlightId }: { highlightId: string }) {
     async function deleteHighlight() {
-        const response = await (await fetch(`${apiUrl}/api/home/highlights/${highlightId}`, { method: 'DELETE' })).json()
+        const response = await (await fetch(`${API_URL}/api/home/highlights/${highlightId}`, { method: 'DELETE' })).json()
         response.highlight && revalidateTag('highlights')
     }
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/Buttons/Button";
-import { apiUrl } from "@/constants/api-url.constant";
+import { API_URL } from "@/constants/api-url.constant";
 import { PathEnum } from "@/enums/path.enum";
 import { IAboutHome } from "@/interfaces/about-home.interface";
 import { useEffect, useState } from "react";
@@ -12,7 +12,7 @@ export default function AboutHome() {
 
     useEffect(() => {
         async function getAbout() {
-            const { about } = await (await fetch(`${apiUrl}/api/home/about`)).json()
+            const { about } = await (await fetch(`${API_URL}/api/home/about`)).json()
             setAbout(about)
         }
         getAbout()

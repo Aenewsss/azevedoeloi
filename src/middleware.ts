@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { apiUrl } from "./constants/api-url.constant"
+import { API_URL } from "./constants/api-url.constant"
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
@@ -8,7 +8,7 @@ export async function middleware(request: NextRequest) {
   if (pathname.includes('admin')) {
     const currentUser = request.cookies.get('currentUser')?.value
     if (currentUser) {
-      const userAuthenticated = await (await fetch(`${apiUrl}/api/authenticate/verify-jwt`, {
+      const userAuthenticated = await (await fetch(`${API_URL}/api/authenticate/verify-jwt`, {
         body: JSON.stringify({ token: currentUser }),
         method: "POST",
         headers: {

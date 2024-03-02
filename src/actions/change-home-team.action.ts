@@ -1,9 +1,9 @@
-import { apiUrl } from "@/constants/api-url.constant"
+import { API_URL } from "@/constants/api-url.constant"
 import { revalidateTag } from "next/cache"
 
 export async function changeHomeTeamAction(prevState: any, form: FormData) {
 
-    const result = await (await fetch(`${apiUrl}/api/home/team/`, {
+    const result = await (await fetch(`${API_URL}/api/home/team/`, {
         method: "PUT",
         body: form,
     })).json()

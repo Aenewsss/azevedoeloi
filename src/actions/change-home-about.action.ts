@@ -1,9 +1,9 @@
-import { apiUrl } from "@/constants/api-url.constant"
+import { API_URL } from "@/constants/api-url.constant"
 import { revalidateTag } from "next/cache"
 
 export async function changeHomeAboutAction(prevState: any, form: FormData) {
 
-    const result = await (await fetch(`${apiUrl}/api/home/about/`, {
+    const result = await (await fetch(`${API_URL}/api/home/about/`, {
         method: "PUT",
         body: form,
     })).json()

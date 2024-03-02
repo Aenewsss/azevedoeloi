@@ -47,7 +47,7 @@ export default function TeamPage() {
             <div className="col-md-6">
                 <Image className="rounded w-100" src="/team3.webp" width={500} height={500} alt="AZEVEDO & ELOI ADVOGADOS ASSOCIADOS" />
             </div>
-            <div className="col-md-6  mt-md-0 mt-3">
+            <div className="col-md-6  mt-md-0 mt-3w">
                 <div className="d-flex flex-column">
                     <h2 className="fw-semibold fs-4">AZEVEDO & ELOI ADVOGADOS ASSOCIADOS</h2>
                     <div className="d-flex flex-column text-secondary text-uppercase">

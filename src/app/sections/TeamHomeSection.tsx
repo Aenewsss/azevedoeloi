@@ -1,6 +1,6 @@
 "use client"
 
-import { apiUrl } from "@/constants/api-url.constant";
+import { API_URL } from "@/constants/api-url.constant";
 import { ITeamHome } from "@/interfaces/team-home.interface";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +12,7 @@ export default function TeamHomeSection() {
 
     useEffect(() => {
         async function getAbout() {
-            const { team } = await (await fetch(`${apiUrl}/api/home/team`)).json()
+            const { team } = await (await fetch(`${API_URL}/api/home/team`)).json()
             setTeam(team)
         }
         getAbout()

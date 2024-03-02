@@ -3,23 +3,23 @@
 import { API_URL } from "@/constants/api-url.constant"
 import { revalidatePath } from "next/cache"
 
-export async function addBanner(prevState: any, form: FormData) {
+export async function addTeam(prevState: any, form: FormData) {
 
-    const result: { newBanner: string } | { error: string } = await (await fetch(`${API_URL}/api/home/banner`, {
+    const result: { newTeam: string } | { error: string } = await (await fetch(`${API_URL}/api/team`, {
         method: "POST",
         body: form
     })).json()
 
     if ("error" in result) return {
         error: result.error,
-        newBanner: ""
+        newTeam: ""
     }
     
-    revalidatePath('/admin/pagina-inicial')
+    revalidatePath('/admin/nosso-time')
     
     return {
         error: "",
-        newBanner: result.newBanner    
+        newTeam: result.newTeam    
     }
 
 }

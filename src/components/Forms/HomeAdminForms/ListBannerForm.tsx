@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { useFormState } from "react-dom";
 import { IBanner } from "@/interfaces/banner.interface";
 import Image from "next/image";
-import { apiUrl } from "@/constants/api-url.constant";
+import { API_URL } from "@/constants/api-url.constant";
 
 export default function ListBannerForm() {
     const [messageUpdate, updateBannerAction] = useFormState(updateBanner, { updated: "", error: "" })
@@ -17,7 +17,7 @@ export default function ListBannerForm() {
 
     useEffect(() => {
         async function getBanners() {
-            const { banners }: { banners: IBanner[] } = await (await fetch(`${apiUrl}/api/home/banner`, { next: { tags: ['banners'] } })).json()
+            const { banners }: { banners: IBanner[] } = await (await fetch(`${API_URL}/api/home/banner`, { next: { tags: ['banners'] } })).json()
             setBanners(banners)
         }
         getBanners()

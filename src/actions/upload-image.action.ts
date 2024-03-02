@@ -1,6 +1,6 @@
 "use server"
 
-import { apiUrl } from "@/constants/api-url.constant"
+import { API_URL } from "@/constants/api-url.constant"
 
 export async function uploadImage(prevState: any, form: FormData) {
     
@@ -8,7 +8,7 @@ export async function uploadImage(prevState: any, form: FormData) {
 
     console.log('form bef upload', form)
     
-    const result: { imageSrc: string } = await (await fetch(`${apiUrl}/api/home/banner`, {
+    const result: { imageSrc: string } = await (await fetch(`${API_URL}/api/home/banner`, {
         method: "POST",
         body: form
     })).json()

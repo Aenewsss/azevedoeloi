@@ -1,5 +1,5 @@
 import { changeHomeBlogAction } from "@/actions/change-home-blog.action";
-import { apiUrl } from "@/constants/api-url.constant";
+import { API_URL } from "@/constants/api-url.constant";
 import { IBlogHome } from "@/interfaces/blog-home.interface";
 import { useEffect, useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
@@ -15,7 +15,7 @@ export default function BlogForm() {
     }, []);
 
     async function getBlog() {
-        const { blog } = await (await fetch(`${apiUrl}/api/home/blog`, { next: { tags: ['home-blog'] } })).json()
+        const { blog } = await (await fetch(`${API_URL}/api/home/blog`, { next: { tags: ['home-blog'] } })).json()
         setBlog(blog)
     }
 
