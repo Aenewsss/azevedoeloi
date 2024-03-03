@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function AboutPage() {
     return <main className="container text-black mt-md-5 pt-md-4">
-        <h1 className="d-md-none display-4 text-center">O Escritório</h1>
-        <div className="row d-flex justify-content-center">
+        {/* <h1 className="d-md-none display-4 text-center">O Escritório</h1> */}
+        <div className="row d-flex justify-content-center mt-md-0 mt-5">
             <div className="col-md-7">
                 <article className="fs-5 d-flex flex-column gap-4">
                     <p>A Azevedo &amp; Eloi Advogados Associados atua de forma personalizada, com dedicação exclusiva para cada demanda. Assim, é possível ofertar soluções jurídicas adequadas e criativas, com foco nos interesses e objetivos de cada cliente.</p>

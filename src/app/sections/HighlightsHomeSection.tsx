@@ -21,8 +21,8 @@ export default function HighlightsHomeSection() {
         <section className="py-5" style={{ backgroundColor: "#f2f2f2" }}>
             <div className="container d-flex justify-content-around align-items-center flex-md-nowrap flex-wrap gap-md-0 gap-4">
                 {
-                    highlights?.map(highlight =>
-                        <Link href={highlight.link} className="d-flex flex-column gap-3 align-items-center ">
+                    highlights?.map((highlight, index) =>
+                        <Link key={index} href={highlight.link} className="d-flex flex-column gap-3 align-items-center ">
                             <Image width={60} height={60} src={highlight.icon} alt="" />
                             <span className="fs-5 text-center">{highlight.title}</span>
                         </Link>
