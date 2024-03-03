@@ -4,10 +4,10 @@ import { useState } from "react";
 import { useFormState } from "react-dom";
 import { ITeam } from "@/interfaces/team.interface";
 import SaveButton from "@/components/Buttons/SaveButton";
-import { useRouter } from "next/navigation";
-import ReactQuill from "react-quill";
+const ReactQuill = dynamic(import('react-quill'), {ssr: false});
 import 'react-quill/dist/quill.snow.css';
 import { formatsReactQuill, modulesReactQuill } from "@/constants/react-quill.constant";
+import dynamic from "next/dynamic";
 
 interface IProps {
     setAddingNewTeam: any

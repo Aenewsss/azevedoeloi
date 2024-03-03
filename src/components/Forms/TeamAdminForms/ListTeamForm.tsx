@@ -8,8 +8,9 @@ import Image from "next/image";
 import { API_URL } from "@/constants/api-url.constant";
 import DeleteTeamButton from "@/components/Buttons/DeleteTeamButton";
 import CancelTeamButton from "@/components/Buttons/CancelTeamButton";
-import ReactQuill from "react-quill";
+const ReactQuill = dynamic(import('react-quill'), {ssr: false});
 import { formatsReactQuill, modulesReactQuill } from "@/constants/react-quill.constant";
+import dynamic from "next/dynamic";
 
 export default function ListTeamForm() {
     const [messageUpdate, updateTeamAction] = useFormState(updateTeam, { updated: "", error: "" })

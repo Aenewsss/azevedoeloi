@@ -3,7 +3,7 @@ import { ITeam } from "@/interfaces/team.interface"
 
 class TeamApiService {
     async getAllTeams(): Promise<ITeam[]> {
-        return (await db.query("SELECT * FROM team")).rows
+        return (await db.query("SELECT * FROM team ORDER BY id")).rows
     }
 
     async getTeamById(id: string): Promise<ITeam> {

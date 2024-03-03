@@ -27,7 +27,7 @@ export default function Admin() {
                         </div>
                     </Link>
                 </div>
-                <div className="col-md-4 mb-md-3 mb-0">
+                {/* <div className="col-md-4 mb-md-3 mb-0">
                     <Link href={PathEnum.ADMIN_CONTACT} className="scale h-420 rounded d-flex flex-column gap-3 overflow-hidden border ">
                         <Image className="object-fit-cover w-100 mh-200" quality={100} src="https://img.freepik.com/free-photo/young-woman-typing-smart-phone-indoors-generated-by-ai_188544-39270.jpg?t=st=1708652008~exp=1708655608~hmac=791c243e06d1664d88ea52e854416ab32878ed1643c137bb96da921b667ac6c8&w=1060" width={300} height={200} alt="" />
                         <div className="p-2">
@@ -35,7 +35,7 @@ export default function Admin() {
                             <p>Aqui, você pode gerenciar as informações de contato da empresa, como endereço, números de telefone, e-mails e links para redes sociais. É uma seção importante para os visitantes encontrarem maneiras de se conectar com sua empresa.</p>
                         </div>
                     </Link>
-                </div>
+                </div> */}
                 <div className="col-md-4 mb-md-3 mb-0">
                     <Link href={PathEnum.ADMIN_BLOG} className="scale h-420 rounded d-flex flex-column gap-3 overflow-hidden border ">
                         <Image className="object-fit-cover w-100 mh-200" quality={100} src="https://img.freepik.com/free-photo/teamwork-making-online-blog_53876-94868.jpg?t=st=1708652033~exp=1708655633~hmac=ed2a066b2ae2d0eecd0c09ab4553a25560b31cce82578bd906448bdfc34ef73f&w=996" width={300} height={200} alt="" />
