@@ -18,6 +18,7 @@ export default function ListBannerForm() {
     useEffect(() => {
         async function getBanners() {
             const { banners }: { banners: IBanner[] } = await (await fetch(`${API_URL}/api/home/banner`, { next: { tags: ['banners'] } })).json()
+            console.log(banners)
             setBanners(banners)
         }
         getBanners()
@@ -44,9 +45,9 @@ export default function ListBannerForm() {
         return (currentBannerToEdit && currentBannerToEdit.id == bannerId)
     }
 
-    if (banners.length == 0) return <p>Nenhum banner adicionado</p>
+    if (!banners || banners?.length == 0) return <p>Nenhum banner adicionado</p>
 
-    return banners.map((banner => (
+    return banners && banners.map((banner => (
         <div className=" border-bottom border-black pb-5 mt-3">
             <form action={updateBannerAction} key={banner.id} className="text-start">
                 <div className="d-flex flex-md-nowrap flex-wrap justify-content-between">
