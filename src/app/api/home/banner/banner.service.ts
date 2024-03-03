@@ -30,7 +30,7 @@ class BannerApiService {
         `)).rows[0]
     }
     async deleteBanner(id: string) {
-        return (await db.query(`DELETE FROM banners WHERE id = ${id} RETUNING *`)).rows[0]
+        return (await db.query(`DELETE FROM banners WHERE id = ${id} RETURNING *`)).rows[0]
     }
 
     async getLastBannerAdded(): Promise<{id:string}>{

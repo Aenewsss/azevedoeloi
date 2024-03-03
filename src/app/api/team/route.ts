@@ -20,10 +20,13 @@ export async function POST(req: Request) {
         const [email, image, info, name, text] = [form.get('email') as string, form.get('image') as File, form.get('info') as string, form.get('name') as string, form.get('text') as string]
 
         if (!email || !image || !info || !name || !text)
-            return NextResponse.json({ error: 'Insira todos os dados do formulário: email, image, info, name, text' });
+            return NextResponse.json({ error: 'Insira todos os dados do formulário: E-mail, imagem, informações, nome e texto' });
 
         const bufferImage = Buffer.from(await image.arrayBuffer())
-        const imagePath = PathPublicImagesEnum.TEAM + image.name
+
+        const { id: lastTeamId } = await teamService.getLastTeamAdded()
+
+        const imagePath = PathPublicImagesEnum.TEAM + (Number(lastTeamId) + 1) + image.name
 
         fs.writeFile(imagePath, bufferImage, (err) => { if (err) console.error(err) })
 

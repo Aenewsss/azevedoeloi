@@ -30,7 +30,15 @@ class TeamApiService {
         `)).rows[0]
     }
     async deleteTeam(id: string) {
-        return (await db.query(`DELETE FROM team WHERE id = ${id} RETUNING *`)).rows[0]
+        return (await db.query(`DELETE FROM team WHERE id = ${id} RETURNING *`)).rows[0]
+    }
+
+    async getLastTeamAdded(): Promise<{id:string}>{
+        try{
+            return (await db.query(`SELECT  * FROM team ORDER BY id DESC LIMIT 1`)).rows[0] || {id: "0"}
+        } catch(e) {
+            return {id: "0"}
+        }
     }
 }
 

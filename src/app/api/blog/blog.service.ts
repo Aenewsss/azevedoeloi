@@ -30,7 +30,7 @@ class BlogApiService {
         `)).rows[0]
     }
     async deleteBlog(id: string) {
-        return (await db.query(`DELETE FROM blog WHERE id = ${id} RETUNING *`)).rows[0]
+        return (await db.query(`DELETE FROM blog WHERE id = ${id} RETURNING *`)).rows[0]
     }
 }
 

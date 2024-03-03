@@ -73,7 +73,7 @@ export default function ListHighlightForm() {
                             value={currentHighlightToEdit && (currentHighlightToEdit.id == highlight.id) ? currentHighlightToEdit?.title || "" : highlight.title}
                             onChange={(e: any) => setCurrentHighlightToEdit({ ...currentHighlightToEdit!, title: e.target.value })}
                         />
-                        <span onClick={() => changeEditing(highlight.id!)} role="button" className="text-primary">Click aqui para editar o título</span>
+                        <span onClick={() => changeEditing(highlight.id!)} role="button" className="text-primary">Clique aqui para editar o título</span>
                     </div>
                     <div className="d-flex flex-column gap-2">
                         <label className="fs-5 fw-medium" htmlFor={`formLink${highlight.id}`}>Link</label>
@@ -87,7 +87,7 @@ export default function ListHighlightForm() {
                             value={currentHighlightToEdit && (currentHighlightToEdit.id == highlight.id) ? currentHighlightToEdit?.link || "" : highlight.link}
                             onChange={(e: any) => setCurrentHighlightToEdit({ ...currentHighlightToEdit!, link: e.target.value })}
                         />
-                        <span onClick={() => changeEditing(highlight.id!)} role="button" className="text-primary">Click aqui para editar o link</span>
+                        <span onClick={() => changeEditing(highlight.id!)} role="button" className="text-primary">Clique aqui para editar o link</span>
                     </div>
                 </div>
                 {editing.currentEditing && <SaveChangesButton />}

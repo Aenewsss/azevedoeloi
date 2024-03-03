@@ -54,8 +54,8 @@ export default function ListBannerForm() {
                     <div className="d-flex flex-column gap-2">
                         <label className="fw-medium fs-5">Imagem grande</label>
                         <span className="fs-14">Imagem grande que aparece em telas maiores<br />(computadores, tablets).<br />Tamanho recomendado: 1600px/600px.</span>
-                        <div className="position-relative w-300 h-200" >
-                            <Image width={300} height={200} src={sameIdCurrentBanner(banner.id!) ? currentBannerToEdit!.large_image : banner.large_image} alt={sameIdCurrentBanner(banner.id!) ? currentBannerToEdit!.large_image : banner.large_image} />
+                        <div className="position-relative w-300 h-200 overflow-hidden" >
+                            <Image className="object-fit-contain h-100" width={300} height={200} src={sameIdCurrentBanner(banner.id!) ? currentBannerToEdit!.large_image : banner.large_image} alt={sameIdCurrentBanner(banner.id!) ? currentBannerToEdit!.large_image : banner.large_image} />
                             <div onClick={() => changeEditing(banner.id!)} className={`${!sameIdCurrentBanner(banner.id!) && 'pe-none'} opacity-0 large-image-edit top-0 w-100 h-100 d-flex justify-content-center align-items-center position-absolute`}>
                                 <label className="text-white z-1 fs-3 mb-0" htmlFor="large_image">Trocar imagem</label>
                                 <div className="position-absolute w-100 h-100 bg-black opacity-50"></div>
@@ -66,8 +66,8 @@ export default function ListBannerForm() {
                     <div className="d-flex flex-column gap-2">
                         <label className="fw-medium fs-5">Imagem pequena</label>
                         <span className="fs-14">Imagem pequena que aparece em telas menores<br /> (celular).<br /> Tamanho recomendado: 800px/600px.</span>
-                        <div onClick={() => changeEditing(banner.id!)} className="position-relative w-300 h-200" >
-                            <Image width={300} height={200} src={sameIdCurrentBanner(banner.id!) ? currentBannerToEdit!.small_image : banner.small_image} alt={sameIdCurrentBanner(banner.id!) ? currentBannerToEdit!.small_image : banner.small_image} />
+                        <div onClick={() => changeEditing(banner.id!)} className="position-relative w-300 h-200 overflow-hidden" >
+                            <Image className="object-fit-contain h-100" width={300} height={200} src={sameIdCurrentBanner(banner.id!) ? currentBannerToEdit!.small_image : banner.small_image} alt={sameIdCurrentBanner(banner.id!) ? currentBannerToEdit!.small_image : banner.small_image} />
                             <div className={`${!sameIdCurrentBanner(banner.id!) && 'pe-none'} opacity-0 small-image-edit top-0 w-100 h-100 d-flex justify-content-center align-items-center position-absolute`}>
                                 <label className="text-white z-1 fs-3 mb-0" htmlFor="small_image">Trocar imagem</label>
                                 <div className="position-absolute w-100 h-100 bg-black opacity-50"></div>
@@ -87,7 +87,7 @@ export default function ListBannerForm() {
                             value={currentBannerToEdit && (currentBannerToEdit.id == banner.id) ? currentBannerToEdit?.link || "" : banner.link}
                             onChange={(e: any) => setCurrentBannerToEdit({ ...currentBannerToEdit!, link: e.target.value })}
                         />
-                        <span onClick={() => changeEditing(banner.id!)} role="button" className="text-primary">Click aqui para editar o link</span>
+                        <span onClick={() => changeEditing(banner.id!)} role="button" className="text-primary">Clique aqui para editar o link</span>
                     </div>
                 </div>
                 {editing.currentEditing && <SaveChanges />}

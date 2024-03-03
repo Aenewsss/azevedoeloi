@@ -30,7 +30,7 @@ class HighlightsHomeService {
         `)).rows[0]
     }
     async deleteHighlightHome(id: string) {
-        return (await db.query(`DELETE FROM highlights_home WHERE id = ${id} RETUNING *`)).rows[0]
+        return (await db.query(`DELETE FROM highlights_home WHERE id = ${id} RETURNING *`)).rows[0]
     }
 
     async getLastAdded(){

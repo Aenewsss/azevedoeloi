@@ -3,6 +3,7 @@ import { PathPublicImagesEnum } from "@/enums/path.enum"
 import fs from "fs"
 import { promisify } from "util"
 import teamService from "../team.service"
+import { ITeam } from "@/interfaces/team.interface"
 
 export async function GET(req: Request, context: any) {
     try {
@@ -24,22 +25,27 @@ export async function PUT(req: Request, context: any) {
 
         // Remove os arquivos que já existem, para não poluir a memória
         const oldTeam = await teamService.getTeamById(params.id)
+
+        const isTheSameImage = image.name == 'undefined' ? true : false
         
-        await promisify(fs.rm)("public" + oldTeam.image)
+        if (!isTheSameImage) fs.rmSync("public" + oldTeam.image)
         
         // Adiciona os novos arquivos em suas devidas pastas
         const bufferImage = Buffer.from(await image.arrayBuffer())
-        const imagePath = PathPublicImagesEnum.TEAM + image.name
+        
+        const { id: lastTeamId } = await teamService.getLastTeamAdded()
 
-        fs.writeFile(imagePath, bufferImage, (err) => { if (err) console.error(err) })
+        const imagePath = PathPublicImagesEnum.TEAM + (Number(lastTeamId) + 1) + image.name
 
-        const teamToUpdate = await teamService.createTeam({
-            image: imagePath.replace("public", ""),
+        if (!isTheSameImage) fs.writeFileSync(imagePath, bufferImage)
+
+        const teamToUpdate: ITeam = {
+            image: isTheSameImage ? oldTeam.image : imagePath.replace("public", ""),
             email,
             info,
             name,
             text
-        })
+        }
 
         const teamUpdated = await teamService.updateTeam(params.id, teamToUpdate)
 
@@ -54,13 +60,13 @@ export async function DELETE(req: Request, context: any) {
 
         // Remove os arquivos que já existem, para não poluir a memória
         const oldTeam = await teamService.getTeamById(params.id)
-
-        await promisify(fs.rm)("public" + oldTeam.image)
-
+        fs.rmSync("public" + oldTeam.image)
+        
         const team = await teamService.deleteTeam(params.id)
-
+        
         return NextResponse.json({ team })
     } catch (error) {
+        console.log(error, 'line 69')
         return NextResponse.json({ error })
     }
 }

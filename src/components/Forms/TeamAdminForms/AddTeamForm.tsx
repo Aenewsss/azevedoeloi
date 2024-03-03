@@ -31,12 +31,12 @@ export default function AddTeamForm(props: IProps) {
             <label className="fw-medium fs-5">Imagem</label>
             <input onChange={changeImage} className="d-none" accept="image/*" type="file" name="image" id="image" />
             <label className="btn btn-black text-white mb-0 bg-black d-flex align-self-start" htmlFor="image">Adicionar imagem</label>
-            {teamToAdd.image && <Image className="border border-black" width={200} height={100} src={teamToAdd.image} alt={teamToAdd.image} />}
+            {teamToAdd.image && <Image className="border border-black p-2" width={200} height={100} src={teamToAdd.image} alt={teamToAdd.image} />}
         </div>
         <div className="d-flex gap-5 flex-wrap">
             <div className="d-flex flex-column gap-2 w-md-30">
                 <label className="fs-5 fw-medium" >Nome</label>
-                <input
+                <input required
                     type="text"
                     className="form-control w-100"
                     name="name"
@@ -45,7 +45,7 @@ export default function AddTeamForm(props: IProps) {
             </div>
             <div className="d-flex flex-column gap-2 w-md-30">
                 <label className="fs-5 fw-medium" >E-mail</label>
-                <input
+                <input required
                     type="text"
                     className="form-control w-100"
                     name="email"
@@ -53,7 +53,7 @@ export default function AddTeamForm(props: IProps) {
             </div>
             <div className="d-flex flex-column gap-2 w-md-30">
                 <label className="fs-5 fw-medium" >Informações</label>
-                <input
+                <input required
                     type="text"
                     className="form-control w-100"
                     name="info"
@@ -63,7 +63,8 @@ export default function AddTeamForm(props: IProps) {
         </div>
         <div className="d-flex flex-column gap-2">
             <label className="fs-5 fw-medium" >Texto</label>
-            <ReactQuill formats={formatsReactQuill} modules={modulesReactQuill} theme="snow" value={teamToAdd.text} onChange={(e) => setTeamToAdd({...teamToAdd, text: e.target.value})}  />
+            <ReactQuill  formats={formatsReactQuill} modules={modulesReactQuill} theme="snow" value={teamToAdd.text} onChange={(value) => setTeamToAdd({ ...teamToAdd, text: value })} />
+            <input type="text" value={teamToAdd.text} name="text" className="d-none" />
         </div>
 
         {errorMessageAdd?.error && <p className="mt-3 text-danger">{errorMessageAdd.error}</p>}
