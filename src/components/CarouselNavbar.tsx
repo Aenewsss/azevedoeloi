@@ -27,11 +27,11 @@ const CarouselNavbar = () => {
                 <div className="carousel-inner h-100">
                     {banners?.map((banner, index) => (
                         index == 0 ?
-                            <div className="h-100 carousel-item active ">
+                            <div key={index} className="h-100 carousel-item active ">
                                 <Image fill src={renderImageByScreenWidth(banner)} className="h-100 w-100 object-fit-cover " alt={`Imagem ${renderImageByScreenWidth}`} />
                             </div>
                             :
-                            <div className="h-100 carousel-item">
+                            <div key={index} className="h-100 carousel-item">
                                 <Image fill src={renderImageByScreenWidth(banner)} className=" object-fit-cover h-100 w-100" alt={`Imagem ${renderImageByScreenWidth}`} />
                             </div>
 

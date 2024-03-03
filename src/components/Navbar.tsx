@@ -12,12 +12,8 @@ const Navbar = () => {
     const pathname = usePathname()
 
     const [NavHeight, setNavHeight] = useState<CSSProperties>(
-        typeof window != 'undefined'
-            ? window.innerWidth >= 992
-                ? pathname == PathEnum.MAIN
-                    ? { height: '75vh' }
-                    : { height: '55vh' }
-                : { height: '35vh' }
+        pathname == PathEnum.MAIN
+            ? { height: '75vh' }
             : { height: '55vh' }
     );
 
@@ -25,14 +21,14 @@ const Navbar = () => {
         typeof window != 'undefined' && window.addEventListener('resize', changeNavWidth)
     }, [])
 
+    useEffect(() => {
+        changeNavWidth()
+    }, [pathname]);
+
     function changeNavWidth() {
-        typeof window != 'undefined'
-            ? window.innerWidth >= 992
-                ? pathname == PathEnum.MAIN
-                    ? setNavHeight({ height: '75vh' })
-                    : setNavHeight({ height: '55vh' })
-                : setNavHeight({ height: '35vh' })
-            : setNavHeight({ height: '75vh' })
+        pathname == PathEnum.MAIN
+            ? setNavHeight({ height: '75vh' })
+            : setNavHeight({ height: '55vh' })
     }
 
     function getPageTitle() {
@@ -51,7 +47,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div style={NavHeight} className="position-relative overflow-hidden d-lg-flex d-none">
+            <div style={NavHeight} className="position-relative overflow-hidden d-lg-block d-none">
                 <nav className="navbar navbar-expand-lg bg-transparent z-2 container mt-lg-2">
                     <div className="container-fluid">
                         <a className="navbar-brand" href="/">
@@ -162,7 +158,7 @@ const Navbar = () => {
                 {pathname != '/'
                     ? <div className="h-100 position-absolute top-0">
                         <Image className="h-100 object-fit-cover" fill src="/banner_geral.webp" alt="Banner" />
-                        <h1 style={{marginTop: 200}} className="display-4 text-white text-center w-100 position-absolute top-0">{getPageTitle()}</h1>
+                        <h1 style={{ marginTop: 200 }} className="display-4 text-white text-center w-100 position-absolute top-0">{getPageTitle()}</h1>
                     </div>
                     : <CarouselNavbar />}
             </div>

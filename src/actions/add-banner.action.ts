@@ -16,6 +16,7 @@ export async function addBanner(prevState: any, form: FormData) {
     }
     
     revalidatePath('/admin/pagina-inicial')
+    revalidatePath('/')
     
     return {
         error: "",

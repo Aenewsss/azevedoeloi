@@ -18,7 +18,6 @@ export default function ListBannerForm() {
     useEffect(() => {
         async function getBanners() {
             const { banners }: { banners: IBanner[] } = await (await fetch(`${API_URL}/api/home/banner`, { next: { tags: ['banners'] } })).json()
-            console.log(banners)
             setBanners(banners)
         }
         getBanners()

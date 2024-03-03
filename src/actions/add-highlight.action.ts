@@ -1,7 +1,7 @@
 "use server"
 
 import { API_URL } from "@/constants/api-url.constant"
-import { revalidateTag } from "next/cache"
+import { revalidatePath, revalidateTag } from "next/cache"
 
 export async function addHighlightAction(prevState: any, form: FormData) {
 
@@ -12,6 +12,7 @@ export async function addHighlightAction(prevState: any, form: FormData) {
 
     if (result.bannerUpdated) {
         revalidateTag('highlights')
+        revalidatePath('/')
         return { newHighlight: result.newHighlight, error: "" }
     }
     return { error: result.error, newHighlight: "" }
