@@ -92,6 +92,14 @@ ul {
   max-width: 300px;
 }
 
+.mw-670 {
+  max-width: 670px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
 .line-after {
   position: relative;
 }
