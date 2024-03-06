@@ -6,8 +6,8 @@ import Link from "next/link";
 export default function AreasPage() {
     return <main className="container text-black py-5">
         <div className="row">
-            <div className="col-md-8 d-flex justify-content-end">
-                <article className="mw-670 fs-18">
+            <div className="col-md-8 d-flex justify-content-md-end">
+                <article className="mw-670 fs-18 w-100">
                     <p>O Direito do Consumidor é o ramo do direito que estuda e regulamenta as <strong>relações de consumo</strong>, bem como protege os direitos do consumidor. Por isso, a norma que rege essas relações é a <a rel="noreferrer noopener" href="http://www.planalto.gov.br/ccivil_03/leis/l8078.htm" target="_blank">Lei 8.078, de 11 de setembro de 1990</a>, o nosso Código de Defesa do Consumidor.</p>
                     <p className="mt-5">O CDC define que são consumidores toda pessoa física ou jurídica que adquire ou utiliza serviço prestado como destinatário final. Ou seja, não revende ou transfere o serviço, apenas o utiliza.</p>
                     <h3 className="mt-5">Princípios do Direito do Consumidor</h3>
@@ -19,7 +19,7 @@ export default function AreasPage() {
                     <p className="mt-5">O Código de Defesa do Consumidor traz os mecanismos adequados para que o consumidor possa garantir seus direitos. Além do site do governo federal <a href="https://www.consumidor.gov.br/pages/principal/?1590347002158" target="_blank" rel="noreferrer noopener">consumidor.gov.br</a>, ainda existem os Procons estaduais, onde o cidadão pode registrar sua reclamação.</p>
                     <hr />
                     <p className="mt-5"><a href="#_ftnref1">[1]</a> Secretaria Nacional do Consumidor. Ministério da Justiça. Escola Nacional de Defesa do Consumidor. 4ª. Edição. Brasília. 2014. Disponível em &lt;<a href="https://www.defesadoconsumidor.gov.br/images/manuais/manual-do-direito-do-consumidor.pdf">https://www.defesadoconsumidor.gov.br/images/manuais/manual-do-direito-do-consumidor.pdf</a>&gt; Acesso em 24 mai 2020.</p>
-                    <figure className="wp-block-image size-large">
+                    <figure>
                         <img src="https://azevedoeloi.adv.br/wp-content/uploads/2020/05/veronika-koroleva-F7hv6nSBM3c-unsplash-1024x684.jpg"
                             alt="As relações de consumo são regidas pelo Código de Defesa do Consumidor."
                             className="img-fluid"
@@ -27,7 +27,7 @@ export default function AreasPage() {
                     </figure>
                 </article>
             </div>
-            <div className="col-md-4 d-flex justify-content-center">
+            <div className="col-md-4 d-flex justify-content-center mt-md-0 mt-5">
                 <SidebarAreas />
             </div>
         </div>

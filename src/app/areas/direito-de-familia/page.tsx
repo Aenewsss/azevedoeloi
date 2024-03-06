@@ -6,11 +6,11 @@ import Link from "next/link";
 export default function AreasPage() {
     return <main className="container text-black py-5">
         <div className="row">
-            <div className="col-md-8 d-flex justify-content-end">
+            <div className="col-md-8 d-flex justify-content-md-end">
                 <article className="mw-670 fs-18">
                     <p className="has-text-align-left">
                         O Direito de Família constitui um conjunto de normas-princípios e normas-regras jurídicas que regulam as relações pessoais e patrimoniais decorrentes do vínculo afetivo, podendo se originar através do casamento, da união estável, das relações de filiação e parentesco.</p>
-                    <div className="d-flex justify-content-between flex-row-reverse gap-4">
+                    <div className="d-md-flex justify-content-between flex-row-reverse gap-4">
                         <figure>
                             <img
                                 className="rounded-pill"
@@ -23,7 +23,7 @@ export default function AreasPage() {
 
                     <p>Nosso escritório atua com uma equipe altamente especializada e preparada, com formação acadêmica e larga experiência. </p>
 
-                    <div className="d-flex justify-content-between gap-4">
+                    <div className="d-md-flex justify-content-between gap-4">
                         <figure>
                             <img loading="lazy"
                                 src="https://azevedoeloi.adv.br/wp-content/uploads/2020/09/ekaterina-shakharova-L4nwL3195U0-unsplash-1024x685.jpg"
@@ -85,7 +85,7 @@ export default function AreasPage() {
                     </div>
                 </article>
             </div>
-            <div className="col-md-4 d-flex justify-content-center">
+            <div className="col-md-4 d-flex justify-content-center mt-md-0 mt-5">
                 <SidebarAreas />
             </div>
         </div>

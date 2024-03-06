@@ -8,10 +8,10 @@ export default function AreasPage() {
         <div className="row">
             <div className="col-md-8 d-flex justify-content-end">
                 <article className="mw-670 fs-18">
-                    <div className="d-flex gap-4 flex-row-reverse">
+                    <div className="d-md-flex gap-4 flex-row-reverse">
                         <figure className="alignright size-large is-resized">
                             <img src="https://azevedoeloi.adv.br/wp-content/uploads/2020/05/jonathan-borba-2FBfary7vO8-unsplash-1-1024x683.jpg"
-                                alt="" width="409" height="272" className="rounded-pill"
+                                alt="" width="409" height="272" className="rounded-pill img-fluid"
                                 sizes="(max-width: 409px) 100vw, 409px" />
                         </figure>
                         <div>
@@ -39,7 +39,7 @@ export default function AreasPage() {
                     <h5 className="mt-4">Estamos prontos para te ajudar. Entre em contato conosco.</h5>
                 </article>
             </div>
-            <div className="col-md-4 d-flex justify-content-center">
+            <div className="col-md-4 d-flex justify-content-center mt-md-0 mt-5">
                 <SidebarAreas />
             </div>
         </div>

@@ -25,7 +25,7 @@ export default function AreasPage() {
                     </figure>
                 </article>
             </div>
-            <div className="col-md-4 d-flex justify-content-center">
+            <div className="col-md-4 d-flex justify-content-center mt-md-0 mt-5">
                 <SidebarAreas />
             </div>
         </div>

@@ -24,7 +24,7 @@ export default function AreasPage() {
                     <p className="mt-4"><strong>Atuação jurídica em demandas judiciais:</strong> Cobrança de aluguéis e acessórios da locação; Cobrança de Comissões de Corretagem; Consignação de chaves e pagamentos; Ações de Despejos; rescisão Contratual de locação comercial ou residêncial; Ações Renovatórias de Aluguéis.</p>
                 </article>
             </div>
-            <div className="col-md-4 d-flex justify-content-center">
+            <div className="col-md-4 d-flex justify-content-center mt-md-0 mt-5">
                 <SidebarAreas />
             </div>
         </div>
