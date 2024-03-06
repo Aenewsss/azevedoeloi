@@ -7,7 +7,10 @@ export default function SidebarAreas() {
             <h3 className="fs-4 fw-semibold mb-3">Áreas de atuação</h3>
             <ul className="d-flex flex-column gap-4 fs-5">
                 <li className="border-0 border-bottom pb-2">
-                    <Link href={PathEnum.AREA_DIREITO_FAMILIA}>Direito Sucessório</Link>
+                    <Link href={PathEnum.AREA_DIREITO_FAMILIA}>Direito de Família</Link>
+                </li>
+                <li className="border-0 border-bottom pb-2">
+                    <Link href={PathEnum.AREA_DIREITO_SUCESSORIO}>Direito Sucessório</Link>
                 </li>
                 <li className="border-0 border-bottom pb-2">
                     <Link href={PathEnum.AREA_DIREITO_IMOBILIARIO}>Direito Imobiliário</Link>
