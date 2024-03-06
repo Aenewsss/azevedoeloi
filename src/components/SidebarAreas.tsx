@@ -16,13 +16,13 @@ export default function SidebarAreas() {
                     <Link href={PathEnum.AREA_DIREITO_IMOBILIARIO}>Direito Imobiliário</Link>
                 </li>
                 <li className="border-0 border-bottom pb-2">
-                    <Link href={PathEnum.AREA_DIREITO_PREVIDENCIARIO}>Direito Condominial</Link>
+                    <Link href={PathEnum.AREA_DIREITO_CONDOMINIAL}>Direito Condominial</Link>
                 </li>
                 <li className="border-0 border-bottom pb-2">
-                    <Link href={PathEnum.AREA_DIREITO_CONDOMINIAL}>Direito do Consumidor</Link>
+                    <Link href={PathEnum.AREA_DIREITO_DO_CONSUMIDOR}>Direito do Consumidor</Link>
                 </li>
                 <li className="border-0 border-bottom pb-2">
-                    <Link href={PathEnum.AREA_DIREITO_DO_CONSUMIDOR}>Direito Previdenciário</Link>
+                    <Link href={PathEnum.AREA_DIREITO_PREVIDENCIARIO}>Direito Previdenciário</Link>
                 </li>
                 <li className="border-0 border-bottom pb-2">
                     <Link href={PathEnum.AREA_DIREITO_BANCARIO}>Direito Bancário – Bancos<br />e financeiras</Link>
